@@ -155,7 +155,7 @@ class Application extends BaseController
 		";
 		$data = General::getData(
 			$campos="*",
-			$tabla="usuarios",
+			$tabla="users",
 			$where=array("usua_esta_ide"=>1),
 			$order="usua_ide"
 		);
@@ -272,7 +272,7 @@ class Application extends BaseController
  		$role_ide = $this->request->getPost('role_ide');
  		$acceso = General::getData(
 			$campos="*",
-			$tabla="accesos a",
+			$tabla="role_user a",
 			$where=array(
 				"a.acce_usua_ide"=>$usua_ide,
 				"a.acce_role_ide"=>$role_ide,
@@ -284,7 +284,7 @@ class Application extends BaseController
 			$data=array(
 				"a.acce_esta_ide"=>2,
 			);
-			General::actualizar("accesos a",$where,$data);
+			General::actualizar("role_user a",$where,$data);
 		}
 		else{
 			$data=array(
@@ -292,7 +292,7 @@ class Application extends BaseController
 				"acce_role_ide"=>$role_ide,
 				"acce_esta_ide"=>1,
 			);
-			General::insertar("accesos",$data);
+			General::insertar("role_user",$data);
 		}
     }
     public function setpass(){

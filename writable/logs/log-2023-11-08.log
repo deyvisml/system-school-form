@@ -1,0 +1,480 @@
+ERROR - 2023-11-08 10:14:02 --> mysqli_sql_exception: Table 'system-school-form.usuarios' doesn't exist in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\system\Model.php(185): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system-school-form\system\BaseModel.php(524): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\system-school-form\app\Controllers\Login.php(25): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\Login->verificar()
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#9 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-11-08 10:14:02 --> Table 'system-school-form.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `usuarios`
+WHERE `usua_user` = \'admin\'
+AND `usua_pass` = \'admin\'
+AND `usua_esta_ide` = 1
+AND `usuarios`.`usua_deleted_at` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuarios`
+WHERE `usua_user` = \'admin\'
+AND `usua_pass` = \'admin\'
+AND `usua_esta_ide` = 1
+AND `usuarios`.`usua_deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuarios`
+WHERE `usua_user` = \'admin\'
+AND `usua_pass` = \'admin\'
+AND `usua_esta_ide` = 1
+AND `usuarios`.`usua_deleted_at` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `usua_user` = :usua_user:
+AND `usua_pass` = :usua_pass:
+AND `usua_esta_ide` = :usua_esta_ide:
+AND `usuarios`.`usua_deleted_at` IS NULL', [...], false)
+ 5 SYSTEMPATH\Model.php(185): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(524): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\Login.php(25): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Login->verificar()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 11:23:41 --> Attempt to read property "usua_ide" on array
+in APPPATH\Controllers\Login.php on line 31.
+ 1 APPPATH\Controllers\Login.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "usua_ide" on array', 'APPPATH\\Controllers\\Login.php', 31)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Login->verificar()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 11:24:13 --> Attempt to read property "usua_ide" on array
+in APPPATH\Controllers\Login.php on line 31.
+ 1 APPPATH\Controllers\Login.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "usua_ide" on array', 'APPPATH\\Controllers\\Login.php', 31)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Login->verificar()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 11:29:14 --> Attempt to read property "usua_ide" on array
+in APPPATH\Controllers\Login.php on line 31.
+ 1 APPPATH\Controllers\Login.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "usua_ide" on array', 'APPPATH\\Controllers\\Login.php', 31)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Login->verificar()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 11:30:11 --> Attempt to read property "usua_ide" on array
+in APPPATH\Controllers\Login.php on line 33.
+ 1 APPPATH\Controllers\Login.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "usua_ide" on array', 'APPPATH\\Controllers\\Login.php', 33)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Login->verificar()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-08 11:30:57 --> Attempt to read property "usua_ide" on array
+in APPPATH\Controllers\Login.php on line 31.
+ 1 APPPATH\Controllers\Login.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "usua_ide" on array', 'APPPATH\\Controllers\\Login.php', 31)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Login->verificar()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-08 10:31:49 --> mysqli_sql_exception: Table 'system-school-form.accesos' doesn't exist in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `m`.`mod...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`mod...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`mod...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`mod...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\app\Models\General.php(33): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system-school-form\app\Controllers\Application.php(52): App\Models\General::getRoles('1')
+#6 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\Application->index()
+#7 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-08 10:31:49 --> Table 'system-school-form.accesos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `m`.`modu_ide`, `r`.`role_ide`, `m`.`modu_orden`, `r`.`role_orden`, `m`.`modu_icono`, `m`.`modu_nombre`, `r`.`role_nombre`, `r`.`role_url`, `r`.`role_descripcion`, `m`.`modu_clase`
+FROM `accesos` `a`, `roles` `r`, `modulos` `m`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = `r`.`role_ide`
+AND `r`.`role_modu_ide` = `m`.`modu_ide`
+AND `a`.`acce_esta_ide` = 1
+ORDER BY `m`.`modu_orden`, `r`.`role_orden`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m`.`modu_ide`, `r`.`role_ide`, `m`.`modu_orden`, `r`.`role_orden`, `m`.`modu_icono`, `m`.`modu_nombre`, `r`.`role_nombre`, `r`.`role_url`, `r`.`role_descripcion`, `m`.`modu_clase`
+FROM `accesos` `a`, `roles` `r`, `modulos` `m`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = `r`.`role_ide`
+AND `r`.`role_modu_ide` = `m`.`modu_ide`
+AND `a`.`acce_esta_ide` = 1
+ORDER BY `m`.`modu_orden`, `r`.`role_orden`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m`.`modu_ide`, `r`.`role_ide`, `m`.`modu_orden`, `r`.`role_orden`, `m`.`modu_icono`, `m`.`modu_nombre`, `r`.`role_nombre`, `r`.`role_url`, `r`.`role_descripcion`, `m`.`modu_clase`
+FROM `accesos` `a`, `roles` `r`, `modulos` `m`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = `r`.`role_ide`
+AND `r`.`role_modu_ide` = `m`.`modu_ide`
+AND `a`.`acce_esta_ide` = 1
+ORDER BY `m`.`modu_orden`, `r`.`role_orden`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `m`.`modu_ide`, `r`.`role_ide`, `m`.`modu_orden`, `r`.`role_orden`, `m`.`modu_icono`, `m`.`modu_nombre`, `r`.`role_nombre`, `r`.`role_url`, `r`.`role_descripcion`, `m`.`modu_clase`
+FROM `accesos` `a`, `roles` `r`, `modulos` `m`
+WHERE `a`.`acce_usua_ide` = :a.acce_usua_ide:
+AND `a`.`acce_role_ide` = `r`.`role_ide`
+AND `r`.`role_modu_ide` = `m`.`modu_ide`
+AND `a`.`acce_esta_ide` = 1
+ORDER BY `m`.`modu_orden`, `r`.`role_orden`', [...], false)
+ 5 APPPATH\Models\General.php(33): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Application.php(52): App\Models\General::getRoles('1')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Application->index()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-08 10:34:03 --> mysqli_sql_exception: Table 'system-school-form.torneos' doesn't exist in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `torn_id...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `torn_id...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `torn_id...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `torn_id...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\app\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system-school-form\app\Controllers\Torneo.php(18): App\Models\General::getData('torn_ide as id,...', 'torneos', Array, 'torn_ide')
+#6 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\Torneo->inscribir()
+#7 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Torneo))
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-08 10:34:03 --> Table 'system-school-form.torneos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `torn_ide` as `id`, `torn_nombre` as `nombre`, `torn_jueg_ide` as `juego`
+FROM `torneos`
+WHERE `torn_esta_ide` = 3
+ORDER BY `torn_ide`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `torn_ide` as `id`, `torn_nombre` as `nombre`, `torn_jueg_ide` as `juego`
+FROM `torneos`
+WHERE `torn_esta_ide` = 3
+ORDER BY `torn_ide`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `torn_ide` as `id`, `torn_nombre` as `nombre`, `torn_jueg_ide` as `juego`
+FROM `torneos`
+WHERE `torn_esta_ide` = 3
+ORDER BY `torn_ide`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `torn_ide` as `id`, `torn_nombre` as `nombre`, `torn_jueg_ide` as `juego`
+FROM `torneos`
+WHERE `torn_esta_ide` = :torn_esta_ide:
+ORDER BY `torn_ide`', [...], false)
+ 5 APPPATH\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Torneo.php(18): App\Models\General::getData('torn_ide as id,torn_nombre as nombre,torn_jueg_ide as juego', 'torneos', [...], 'torn_ide')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Torneo->inscribir()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Torneo))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-08 10:34:08 --> mysqli_sql_exception: Table 'system-school-form.usuarios' doesn't exist in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\app\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system-school-form\app\Controllers\Application.php(160): App\Models\General::getData('*', 'usuarios', Array, 'usua_ide')
+#6 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\Application->accesos()
+#7 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-08 10:34:08 --> Table 'system-school-form.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `usuarios`
+WHERE `usua_esta_ide` = 1
+ORDER BY `usua_ide`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuarios`
+WHERE `usua_esta_ide` = 1
+ORDER BY `usua_ide`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuarios`
+WHERE `usua_esta_ide` = 1
+ORDER BY `usua_ide`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `usua_esta_ide` = :usua_esta_ide:
+ORDER BY `usua_ide`', [...], false)
+ 5 APPPATH\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Application.php(160): App\Models\General::getData('*', 'usuarios', [...], 'usua_ide')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Application->accesos()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-08 10:36:48 --> mysqli_sql_exception: Table 'system-school-form.torneos' doesn't exist in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `torn_id...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `torn_id...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `torn_id...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `torn_id...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\app\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system-school-form\app\Controllers\Torneo.php(18): App\Models\General::getData('torn_ide as id,...', 'torneos', Array, 'torn_ide')
+#6 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\Torneo->inscribir()
+#7 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Torneo))
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-08 10:36:48 --> Table 'system-school-form.torneos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `torn_ide` as `id`, `torn_nombre` as `nombre`, `torn_jueg_ide` as `juego`
+FROM `torneos`
+WHERE `torn_esta_ide` = 3
+ORDER BY `torn_ide`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `torn_ide` as `id`, `torn_nombre` as `nombre`, `torn_jueg_ide` as `juego`
+FROM `torneos`
+WHERE `torn_esta_ide` = 3
+ORDER BY `torn_ide`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `torn_ide` as `id`, `torn_nombre` as `nombre`, `torn_jueg_ide` as `juego`
+FROM `torneos`
+WHERE `torn_esta_ide` = 3
+ORDER BY `torn_ide`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `torn_ide` as `id`, `torn_nombre` as `nombre`, `torn_jueg_ide` as `juego`
+FROM `torneos`
+WHERE `torn_esta_ide` = :torn_esta_ide:
+ORDER BY `torn_ide`', [...], false)
+ 5 APPPATH\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Torneo.php(18): App\Models\General::getData('torn_ide as id,torn_nombre as nombre,torn_jueg_ide as juego', 'torneos', [...], 'torn_ide')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Torneo->inscribir()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Torneo))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-08 10:37:23 --> mysqli_sql_exception: Table 'system-school-form.usuarios' doesn't exist in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\app\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system-school-form\app\Controllers\Application.php(160): App\Models\General::getData('*', 'usuarios', Array, 'usua_ide')
+#6 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\Application->accesos()
+#7 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-08 10:37:23 --> Table 'system-school-form.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `usuarios`
+WHERE `usua_esta_ide` = 1
+ORDER BY `usua_ide`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuarios`
+WHERE `usua_esta_ide` = 1
+ORDER BY `usua_ide`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuarios`
+WHERE `usua_esta_ide` = 1
+ORDER BY `usua_ide`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `usua_esta_ide` = :usua_esta_ide:
+ORDER BY `usua_ide`', [...], false)
+ 5 APPPATH\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Application.php(160): App\Models\General::getData('*', 'usuarios', [...], 'usua_ide')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Application->accesos()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-08 10:39:37 --> mysqli_sql_exception: Table 'system-school-form.accesos' doesn't exist in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\app\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system-school-form\app\Controllers\Application.php(281): App\Models\General::getData('*', 'accesos a', Array, '')
+#6 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\Application->asignarol()
+#7 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-08 10:39:37 --> Table 'system-school-form.accesos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = \'2\'
+AND `a`.`acce_esta_ide` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = \'2\'
+AND `a`.`acce_esta_ide` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = \'2\'
+AND `a`.`acce_esta_ide` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = :a.acce_usua_ide:
+AND `a`.`acce_role_ide` = :a.acce_role_ide:
+AND `a`.`acce_esta_ide` = :a.acce_esta_ide:', [...], false)
+ 5 APPPATH\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Application.php(281): App\Models\General::getData('*', 'accesos a', [...], 'C:\\xampp\\htdocs\\system-school-form')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Application->asignarol()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-08 10:40:43 --> mysqli_sql_exception: Table 'system-school-form.accesos' doesn't exist in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\app\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system-school-form\app\Controllers\Application.php(281): App\Models\General::getData('*', 'accesos a', Array, '')
+#6 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\Application->asignarol()
+#7 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-08 10:40:43 --> Table 'system-school-form.accesos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = \'2\'
+AND `a`.`acce_esta_ide` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = \'2\'
+AND `a`.`acce_esta_ide` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = \'2\'
+AND `a`.`acce_esta_ide` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = :a.acce_usua_ide:
+AND `a`.`acce_role_ide` = :a.acce_role_ide:
+AND `a`.`acce_esta_ide` = :a.acce_esta_ide:', [...], false)
+ 5 APPPATH\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Application.php(281): App\Models\General::getData('*', 'accesos a', [...], 'C:\\xampp\\htdocs\\system-school-form')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Application->asignarol()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-08 10:40:52 --> mysqli_sql_exception: Table 'system-school-form.accesos' doesn't exist in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\app\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system-school-form\app\Controllers\Application.php(281): App\Models\General::getData('*', 'accesos a', Array, '')
+#6 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\Application->asignarol()
+#7 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-08 10:40:52 --> Table 'system-school-form.accesos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = \'2\'
+AND `a`.`acce_esta_ide` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = \'2\'
+AND `a`.`acce_esta_ide` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = \'2\'
+AND `a`.`acce_esta_ide` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = :a.acce_usua_ide:
+AND `a`.`acce_role_ide` = :a.acce_role_ide:
+AND `a`.`acce_esta_ide` = :a.acce_esta_ide:', [...], false)
+ 5 APPPATH\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Application.php(281): App\Models\General::getData('*', 'accesos a', [...], 'C:\\xampp\\htdocs\\system-school-form')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Application->asignarol()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-08 10:42:25 --> mysqli_sql_exception: Table 'system-school-form.accesos' doesn't exist in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\app\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system-school-form\app\Controllers\Application.php(281): App\Models\General::getData('*', 'accesos a', Array, '')
+#6 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\Application->asignarol()
+#7 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-08 10:42:25 --> Table 'system-school-form.accesos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = \'2\'
+AND `a`.`acce_esta_ide` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = \'2\'
+AND `a`.`acce_esta_ide` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = \'1\'
+AND `a`.`acce_role_ide` = \'2\'
+AND `a`.`acce_esta_ide` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `accesos` `a`
+WHERE `a`.`acce_usua_ide` = :a.acce_usua_ide:
+AND `a`.`acce_role_ide` = :a.acce_role_ide:
+AND `a`.`acce_esta_ide` = :a.acce_esta_ide:', [...], false)
+ 5 APPPATH\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Application.php(281): App\Models\General::getData('*', 'accesos a', [...], 'C:\\xampp\\htdocs\\system-school-form')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Application->asignarol()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-08 10:48:52 --> mysqli_sql_exception: Table 'system-school-form.torneos' doesn't exist in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `torn_id...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `torn_id...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `torn_id...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `torn_id...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\app\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system-school-form\app\Controllers\Torneo.php(18): App\Models\General::getData('torn_ide as id,...', 'torneos', Array, 'torn_ide')
+#6 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\Torneo->inscribir()
+#7 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Torneo))
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-08 10:48:52 --> Table 'system-school-form.torneos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `torn_ide` as `id`, `torn_nombre` as `nombre`, `torn_jueg_ide` as `juego`
+FROM `torneos`
+WHERE `torn_esta_ide` = 3
+ORDER BY `torn_ide`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `torn_ide` as `id`, `torn_nombre` as `nombre`, `torn_jueg_ide` as `juego`
+FROM `torneos`
+WHERE `torn_esta_ide` = 3
+ORDER BY `torn_ide`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `torn_ide` as `id`, `torn_nombre` as `nombre`, `torn_jueg_ide` as `juego`
+FROM `torneos`
+WHERE `torn_esta_ide` = 3
+ORDER BY `torn_ide`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `torn_ide` as `id`, `torn_nombre` as `nombre`, `torn_jueg_ide` as `juego`
+FROM `torneos`
+WHERE `torn_esta_ide` = :torn_esta_ide:
+ORDER BY `torn_ide`', [...], false)
+ 5 APPPATH\Models\General.php(65): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Torneo.php(18): App\Models\General::getData('torn_ide as id,torn_nombre as nombre,torn_jueg_ide as juego', 'torneos', [...], 'torn_ide')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Torneo->inscribir()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Torneo))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

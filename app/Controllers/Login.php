@@ -1,6 +1,6 @@
 <?php 
 namespace App\Controllers;
-use App\Models\Usuarios;
+use App\Models\User;
 use App\Libraries\Funciones;
 
 class Login extends BaseController
@@ -20,10 +20,13 @@ class Login extends BaseController
             "usua_pass"=>$this->request->getPost('pass'),
             "usua_esta_ide"=>1,
         );
-        $objeto = new Usuarios();
+
+        $objeto = new User();
         $usuarios = $objeto->where($where)->find();
+
         if(count($usuarios)==1){
-            $fecha=Funciones::get_ahora_fecha();
+            $fecha=Funciones::get_ahora_fecha();            
+
             $data_session=array(
                 "login"=>md5("L0g¡NS!st3M4"),
                 "usua_ide"=>$usuarios[0]->usua_ide,
@@ -49,7 +52,7 @@ class Login extends BaseController
             "usua_user"=>"inscripciones",
             "usua_esta_ide"=>1,
         );
-        $objeto = new Usuarios();
+        $objeto = new User();
         $usuarios = $objeto->where($where)->find();
         if(count($usuarios)==1){
             $fecha=Funciones::get_ahora_fecha();

@@ -6,7 +6,7 @@ class General extends Model
 {
 	public static function getRoles($usua_ide){
 		$db = \Config\Database::connect();
-		$builder = $db->table('accesos a');
+		$builder = $db->table('role_user a');
 		$builder->select("
 			m.modu_ide,
 			r.role_ide,
@@ -21,7 +21,7 @@ class General extends Model
 		");
 		$builder->from("
 			roles r,
-			modulos m
+			modules m
 		");
 
 		$builder->where("a.acce_usua_ide",$usua_ide);
@@ -35,7 +35,7 @@ class General extends Model
 	}
 	public static function getRolesAsignados($usua_ide){
 		$db = \Config\Database::connect();
-		$builder = $db->table('accesos a');
+		$builder = $db->table('role_user a');
 		$builder->select("
 			if(a.acce_ide is NULL,'','ASIGNADO') as estado,
 			a.acce_ide,
@@ -50,7 +50,7 @@ class General extends Model
 			"a.acce_role_ide = r.role_ide AND a.acce_usua_ide = $usua_ide  AND a.acce_esta_ide = 1",
 			"right"
 		);
-		$builder->join("modulos m","r.role_modu_ide = m.modu_ide","right");
+		$builder->join("modules m","r.role_modu_ide = m.modu_ide","right");
 		$builder->orderBy("m.modu_orden,r.role_orden");
 
 		$query = $builder->get();
