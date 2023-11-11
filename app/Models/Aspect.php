@@ -4,33 +4,30 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class User extends Model
+class Aspect extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'users';
-    protected $primaryKey       = 'usua_ide';
+    protected $table            = 'aspects';
+    protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'usua_ide',
-    	'usua_enti_ide',
-    	'usua_paterno',
-    	'usua_materno',
-    	'usua_nombres',
-    	'usua_user',
-    	'usua_pass',
-    	'usua_esta_ide'
+        "id",
+        "name",
+        "order",
+        "form_id",
+        "state_id",
     ];
 
     // Dates
     protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'usua_created_at';
-    protected $updatedField  = 'usua_updated_at';
-    protected $deletedField  = 'usua_deleted_at';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
 
     // Validation
     protected $validationRules      = [];

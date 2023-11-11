@@ -1,0 +1,161 @@
+CRITICAL - 2023-11-10 09:06:28 --> file_get_contents(C:\xampp\htdocs\system-school-form\writable\debugbar/debugbar_1699585528.093243.json): Failed to open stream: No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 82.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(C:\\xampp\\htdocs\\system-school-form\\writable\\debugbar/debugbar_1699585528.093243.json): Failed to open stream: No such file or directory', 'SYSTEMPATH\\Debug\\Toolbar\\Collectors\\History.php', 82)
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(82): file_get_contents('FCPATH\\writable\\debugbar/debugbar_1699585528.093243.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(500): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1699628780.813297', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(477): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(46): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(328): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-10 09:28:42 --> Too few arguments to function App\Controllers\FormController::edit(), 0 passed in C:\xampp\htdocs\system-school-form\system\CodeIgniter.php on line 927 and exactly 1 expected
+in APPPATH\Controllers\FormController.php on line 39.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->edit()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-10 09:29:02 --> Too few arguments to function App\Controllers\FormController::edit(), 0 passed in C:\xampp\htdocs\system-school-form\system\CodeIgniter.php on line 927 and exactly 1 expected
+in APPPATH\Controllers\FormController.php on line 39.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->edit()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-10 09:29:14 --> Too few arguments to function App\Controllers\FormController::edit(), 0 passed in C:\xampp\htdocs\system-school-form\system\CodeIgniter.php on line 927 and exactly 1 expected
+in APPPATH\Controllers\FormController.php on line 39.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->edit()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-10 15:46:26 --> Undefined variable $user_id
+in APPPATH\Controllers\FormController.php on line 44.
+ 1 APPPATH\Controllers\FormController.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_id', 'APPPATH\\Controllers\\FormController.php', 44)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->config_aspects('1')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-10 15:47:10 --> Undefined variable $user_id
+in APPPATH\Controllers\FormController.php on line 44.
+ 1 APPPATH\Controllers\FormController.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user_id', 'APPPATH\\Controllers\\FormController.php', 44)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->config_aspects('1')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-10 16:56:01 --> mysqli_sql_exception: Unknown column 'state' in 'where clause' in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\system\Model.php(250): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system-school-form\system\BaseModel.php(623): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\system-school-form\app\Controllers\FormController.php(59): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\FormController->create_aspect()
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+#9 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-11-10 16:56:01 --> Unknown column 'state' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `aspects`
+WHERE `form_id` = \'1\'
+AND `state` = 1
+ORDER BY `order` DESC
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `aspects`
+WHERE `form_id` = \'1\'
+AND `state` = 1
+ORDER BY `order` DESC
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `aspects`
+WHERE `form_id` = \'1\'
+AND `state` = 1
+ORDER BY `order` DESC
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `aspects`
+WHERE `form_id` = :form_id:
+AND `state` = :state:
+ORDER BY `order` DESC
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(623): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\FormController.php(59): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->create_aspect()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-10 16:58:56 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`system-school-form`.`aspects`, CONSTRAINT `state_id_aspects` FOREIGN KEY (`state_id`) REFERENCES `states` (`esta_ide`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `as...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `as...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `as...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `as...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\system\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\system-school-form\system\BaseModel.php(749): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\system-school-form\system\Model.php(667): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\system-school-form\app\Controllers\FormController.php(69): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\FormController->create_aspect()
+#9 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+#10 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-11-10 16:58:56 --> Cannot add or update a child row: a foreign key constraint fails (`system-school-form`.`aspects`, CONSTRAINT `state_id_aspects` FOREIGN KEY (`state_id`) REFERENCES `states` (`esta_ide`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `aspects` (`name`, `order`, `form_id`, `created_at`, `updated_at`) VALUES (\'zzz\', 9, \'1\', \'2023-11-10 16:58:56\', \'2023-11-10 16:58:56\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `aspects` (`name`, `order`, `form_id`, `created_at`, `updated_at`) VALUES (\'zzz\', 9, \'1\', \'2023-11-10 16:58:56\', \'2023-11-10 16:58:56\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `aspects` (`name`, `order`, `form_id`, `created_at`, `updated_at`) VALUES (\'zzz\', 9, \'1\', \'2023-11-10 16:58:56\', \'2023-11-10 16:58:56\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `aspects` (`name`, `order`, `form_id`, `created_at`, `updated_at`) VALUES (:name:, :order:, :form_id:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(749): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(667): CodeIgniter\BaseModel->insert([...], false)
+ 8 APPPATH\Controllers\FormController.php(69): CodeIgniter\Model->insert([...], false)
+ 9 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->create_aspect()
+10 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+11 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-10 17:01:46 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`system-school-form`.`aspects`, CONSTRAINT `state_id_aspects` FOREIGN KEY (`state_id`) REFERENCES `states` (`esta_ide`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `as...', 0)
+#1 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `as...')
+#2 C:\xampp\htdocs\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `as...')
+#3 C:\xampp\htdocs\system-school-form\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `as...', Array, false)
+#4 C:\xampp\htdocs\system-school-form\system\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\system-school-form\system\BaseModel.php(749): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\system-school-form\system\Model.php(667): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\system-school-form\app\Controllers\FormController.php(69): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(927): App\Controllers\FormController->create_aspect()
+#9 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+#10 C:\xampp\htdocs\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\system-school-form\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-11-10 17:01:46 --> Cannot add or update a child row: a foreign key constraint fails (`system-school-form`.`aspects`, CONSTRAINT `state_id_aspects` FOREIGN KEY (`state_id`) REFERENCES `states` (`esta_ide`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `aspects` (`name`, `order`, `form_id`, `created_at`, `updated_at`) VALUES (\'eee\', 9, \'1\', \'2023-11-10 17:01:46\', \'2023-11-10 17:01:46\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `aspects` (`name`, `order`, `form_id`, `created_at`, `updated_at`) VALUES (\'eee\', 9, \'1\', \'2023-11-10 17:01:46\', \'2023-11-10 17:01:46\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `aspects` (`name`, `order`, `form_id`, `created_at`, `updated_at`) VALUES (\'eee\', 9, \'1\', \'2023-11-10 17:01:46\', \'2023-11-10 17:01:46\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `aspects` (`name`, `order`, `form_id`, `created_at`, `updated_at`) VALUES (:name:, :order:, :form_id:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(279): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(749): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(667): CodeIgniter\BaseModel->insert([...], false)
+ 8 APPPATH\Controllers\FormController.php(69): CodeIgniter\Model->insert([...], false)
+ 9 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->create_aspect()
+10 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+11 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-10 17:53:40 --> Undefined variable $record_was_deleted
+in APPPATH\Controllers\FormController.php on line 99.
+ 1 APPPATH\Controllers\FormController.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $record_was_deleted', 'APPPATH\\Controllers\\FormController.php', 99)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->delete_aspect()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-10 17:54:33 --> Undefined variable $form_id
+in APPPATH\Controllers\FormController.php on line 108.
+ 1 APPPATH\Controllers\FormController.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $form_id', 'APPPATH\\Controllers\\FormController.php', 108)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->delete_aspect()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

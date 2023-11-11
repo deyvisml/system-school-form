@@ -117,6 +117,11 @@
 
     <script src="<?=$base; ?>/assets/vendors/gridjs/gridjs.umd.min.js" defer></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    
+
     <script>
         function cargarFuncion(url,modulo,nombre,descripcion){
             openCargar();

@@ -1,0 +1,53 @@
+CRITICAL - 2023-11-09 04:26:58 --> Undefined variable $id
+in APPPATH\Libraries\Componente.php on line 151.
+ 1 APPPATH\Libraries\Componente.php(151): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'APPPATH\\Libraries\\Componente.php', 151)
+ 2 APPPATH\Controllers\FormController.php(22): App\Libraries\Componente::FormItem('title', 'xd', ' shadow-sm border border-2 col-12 col-md-3')
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->read_own()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-09 05:46:14 --> Undefined variable $url
+in APPPATH\Views\componente\FormItem.php on line 10.
+ 1 APPPATH\Views\componente\FormItem.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $url', 'APPPATH\\Views\\componente\\FormItem.php', 10)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\componente\\FormItem.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('componente/FormItem', [], true)
+ 5 APPPATH\Libraries\Componente.php(154): view('componente/FormItem', [...])
+ 6 APPPATH\Controllers\FormController.php(22): App\Libraries\Componente::FormItem('title', 'xd', ' shadow-sm border border-2 col-12 col-md-3')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-09 05:46:51 --> Undefined variable $url
+in APPPATH\Views\componente\FormItem.php on line 10.
+ 1 APPPATH\Views\componente\FormItem.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $url', 'APPPATH\\Views\\componente\\FormItem.php', 10)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\componente\\FormItem.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('componente/FormItem', [], true)
+ 5 APPPATH\Libraries\Componente.php(154): view('componente/FormItem', [...])
+ 6 APPPATH\Controllers\FormController.php(22): App\Libraries\Componente::FormItem('title', 'xd', ' shadow-sm border border-2 col-12 col-md-3')
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-09 05:55:35 --> Undefined variable $module_name
+in APPPATH\Libraries\Componente.php on line 152.
+ 1 APPPATH\Libraries\Componente.php(152): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $module_name', 'APPPATH\\Libraries\\Componente.php', 152)
+ 2 APPPATH\Controllers\FormController.php(22): App\Libraries\Componente::FormItem('title', 'xd', ' shadow-sm border border-2 col-12 col-md-3')
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-09 06:21:39 --> syntax error, unexpected token ",", expecting variable
+in APPPATH\Libraries\Componente.php on line 148.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Libraries\\Componente.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Libraries\\Componente')
+ 3 APPPATH\Views\sistema\vindex.php(23): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Libraries\\Componente')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\sistema\\vindex.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('sistema/vindex', [], true)
+ 7 APPPATH\Controllers\Application.php(80): view('sistema/vindex')
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Application->index()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Application))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

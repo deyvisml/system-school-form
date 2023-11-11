@@ -64,7 +64,17 @@ $routes->post('/ins', 'Torneo::instorneo');
 $routes->add('/inscribirme', 'Login::ainscribir');
 
 
+// * ----------------------------- WORKING --------------------------------------
 
+$routes->post('/formularios', 'FormController::index');
+
+$routes->post('/formularios/(:num)/config-aspects', 'FormController::config_aspects/$1');
+$routes->post('/formularios/(:num)/show', 'FormController::show');
+$routes->post('/formularios/(:num)/users', 'FormController::manage_users');
+
+$routes->post('/formularios/create-aspect', 'FormController::create_aspect');
+
+$routes->post('/aspects/delete', 'FormController::delete_aspect');
 
 /*
  * --------------------------------------------------------------------
