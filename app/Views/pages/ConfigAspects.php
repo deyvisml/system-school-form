@@ -42,7 +42,7 @@
 
 <ul class="list-group gap-1" id="aspects-list">
   <?php foreach ($aspects as $aspect) : ?>
-    <li class="list-group-item border border-2 border-primary-subtle">
+    <li class="aspect list-group-item border border-2 border-primary-subtle" data-id="<?php echo $aspect->id; ?>">
         <div class="d-flex justify-content-between align-items-center">
           <span class="d-flex align-items-center">
               <i class="ti-menu-alt fs-5 "></i>
@@ -53,6 +53,33 @@
     </li>
   <?php endforeach; ?>
 </ul>
+
+<div class="d-flex justify-content-center mt-3">
+  <button type="button" class="btn btn-secondary d-flex gap-2 align-items-center" id="btn-continue-config-aspects"><span>Continuar</span><i class="ti-arrow-right"></i></button>
+</div>
+
+<script>
+  var btn_continue = document.querySelector("#btn-continue-config-aspects");
+
+  btn_continue.addEventListener("click", () => {
+    var aspect_ids = Array.from(document.querySelectorAll('li.aspect'), elemento => Number(elemento.dataset.id));
+    console.log(aspect_ids);
+
+    openCargar();
+    $.post("<?php echo base_url("/aspects/update-order") ?>", {"aspect_ids": aspect_ids}, function(data){
+        data=JSON.parse(data);
+
+        if(!data.error_occurred)
+        {
+          console.log( "xdxd" );
+        }
+        closeCargar();
+        
+        show_toast(data.message, data.error_occurred);
+    });
+
+  });
+</script>
 
 <script>
   function delete_aspect(aspect_id)

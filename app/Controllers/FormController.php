@@ -84,26 +84,4 @@ class FormController extends BaseController
         ));
     }
 
-    public function delete_aspect()
-    {
-        $aspect_id = $this->request->getPost('aspect_id');
-
-        $aspect_model = new Aspect;
-
-        $record_was_deleted = $aspect_model->update($aspect_id, ["state_id" => 2]);
-
-        $message="El aspecto se elimino exitosamente!";
-        $error_occurred = false;
-        
-        if(!$record_was_deleted)
-        {
-            $message="Ocurrio un error en la eliminación del aspecto.";
-            $error_occurred = true;
-        }
-
-        echo json_encode(array(
-            "message" => $message,
-            "error_occurred" => $error_occurred,
-        ));
-    }
 }
