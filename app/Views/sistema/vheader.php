@@ -179,6 +179,28 @@
             });
         }
         setInterval(testing, 60000);
+
+        function show_toast(message, error_occurred)
+        {
+            var background_color = "#5cb85c";
+            if(error_occurred)
+            {
+            background_color = "#d9534f";
+            }
+
+            Toastify({
+            text: message,
+            style: {
+                background: background_color,
+            },
+            duration: 5000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            onClick: function(){} // Callback after click
+            }).showToast();
+        }
     </script>
 
 </head>

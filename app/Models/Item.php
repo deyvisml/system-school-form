@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Form extends Model
+class Item extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'forms';
+    protected $table            = 'items';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
@@ -16,14 +16,15 @@ class Form extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         "id",
-        "name",
-        "description",
-        "user_id",
-        "state_id",
+        "question",
+        "order",
+        "note",
+        "item_type_id",
+        "aspect_id",
     ];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';

@@ -145,22 +145,6 @@ class Componente{
         ";
     }
 
-    public static function FormItem($id, $form_name, $form_description, $module_name, $role_name, $rol_description){
-
-        $data=array(
-            "id"=>1,
-            "form_name" => $form_name,
-            "form_description" => $form_description,
-            "modulo"=>$module_name,
-            "nombre"=>$role_name,
-            "descripcion"=>$rol_description,
-        );
-
-        return view('componente/FormItem',$data);
-    }
-
-
-
     public static function H1($body,$clase){
         return "
             <h1 class='$clase'>$body</h1>

@@ -14,27 +14,65 @@ class FormController extends BaseController
     {
         // get their own forms
         $session = \Config\Services::session();
+
+        $form_model = new Form;
+
+        $forms = $form_model->findAll();
+
+        $data = array(
+            "forms" => $aspects,
+        );
+    }
+
+    public function index_own()
+    {
+        // get their own forms
+        $session = \Config\Services::session();
         $user_id = $session->get("usua_ide");
 
         $form_model = new Form;
 
-        $own_forms = $form_model->where("user_id", $user_id)->findAll();
+        $forms = $form_model->where("user_id", $user_id)->where("state_id", 1)->findAll();
 
-        $container = new SuperComponente();
+        $data = array(
+            "forms" => $forms,
+        );
 
-        foreach ($own_forms as $form) {
+        return view("pages/MyForms", $data);
+    }
 
-            $form_item = Componente::FormItem($form->id, $form->name, "form description", "Formularios", "Editar formulario", "rol descripton");
-            
-            $container->add($form_item);
+    public function store()
+    {
+        $form_name = $this->request->getPost('form_name');
+        $form_description = $this->request->getPost('form_description');
+
+        $session = \Config\Services::session();
+        $user_id = $session->get("usua_ide");
+
+        $form_model = new Form;
+
+        $data = [
+            "name" => $form_name,
+            "description" => $form_description,
+            "user_id" => $user_id,
+            "state_id" => 1,
+        ];
+
+        $record_was_inserted = $form_model->insert($data, false);
+
+        $message="El formulario se creo exitosamente!";
+        $error_occurred = false;
+        
+        if(!$record_was_inserted)
+        {
+            $message="Ocurrio un error en la creación del formulario.";
+            $error_occurred = true;
         }
 
-        // display the forms
-        echo $container->get(
-            $etiqueta="div",
-            $clase="d-flex gap-3 flex-wrap",
-            $propiedades=""
-        );
+        echo json_encode(array(
+            "message" => $message,
+            "error_occurred" => $error_occurred,
+        ));
     }
 
     public function config_aspects($form_id)
@@ -50,38 +88,14 @@ class FormController extends BaseController
         return view("pages/ConfigAspects", $data);
     }
 
-    public function create_aspect()
+    public function config_items($form_id)
     {
-        $aspect_name = $this->request->getPost('aspect_name');
-        $form_id = $this->request->getPost('form_id');
 
-        $aspect_model = new Aspect;
-        $aspect = $aspect_model->where("form_id", $form_id)->where("state_id", 1)->orderBy("order", "desc")->first();
-
-        $order = $aspect->order + 1;
-
-        $data = [
-            "name" => $aspect_name,
-            "order" => $order,
+        $data = array(
             "form_id" => $form_id,
-            "state_id" => 1,
-        ];
+        );
 
-        $record_was_inserted = $aspect_model->insert($data, false);
-
-        $message="El aspecto se creo exitosamente!";
-        $error_occurred = false;
-        
-        if(!$record_was_inserted)
-        {
-            $message="Ocurrio un error en la creación del aspecto.";
-            $error_occurred = true;
-        }
-
-        echo json_encode(array(
-            "message" => $message,
-            "error_occurred" => $error_occurred,
-        ));
+        return view("pages/ConfigItems", $data);
     }
 
 }

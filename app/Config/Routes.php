@@ -58,22 +58,17 @@ $routes->post('/setpass', 'Application::setpass');
 $routes->add('/cerrarsesion', 'Application::salir');
 $routes->add('/testing', 'Application::testing');
 
-// * -------------------------------------------------------------------
-$routes->post('/inscribir', 'Torneo::inscribir');
-$routes->post('/ins', 'Torneo::instorneo');
-$routes->add('/inscribirme', 'Login::ainscribir');
-
-
 // * ----------------------------- WORKING --------------------------------------
 
-$routes->post('/formularios', 'FormController::index');
+$routes->post('/formularios', 'FormController::index_own');
+$routes->post('/formularios/create-form', 'FormController::store');
 
 $routes->post('/formularios/(:num)/config-aspects', 'FormController::config_aspects/$1');
+$routes->post('/formularios/(:num)/config-items', 'FormController::config_items/$1');
 $routes->post('/formularios/(:num)/show', 'FormController::show');
 $routes->post('/formularios/(:num)/users', 'FormController::manage_users');
 
-$routes->post('/formularios/create-aspect', 'FormController::create_aspect');
-
+$routes->post('/formularios/create-aspect', 'AspectController::store');
 $routes->post('/aspects/delete', 'AspectController::delete');
 $routes->post('/aspects/update-order', 'AspectController::update_order');
 
