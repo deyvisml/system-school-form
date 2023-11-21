@@ -189,16 +189,16 @@
             }
 
             Toastify({
-            text: message,
-            style: {
-                background: background_color,
-            },
-            duration: 5000,
-            close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "right", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
-            onClick: function(){} // Callback after click
+                text: message,
+                style: {
+                    background: background_color,
+                },
+                duration: 5000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                onClick: function(){} // Callback after click
             }).showToast();
         }
     </script>
