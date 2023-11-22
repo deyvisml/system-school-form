@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Form;
 use App\Models\Aspect;
+use App\Models\Item;
+use App\Models\Alternative;
 use App\Libraries\SuperComponente;
 use App\Libraries\Componente;
 
@@ -90,9 +92,37 @@ class FormController extends BaseController
 
     public function config_items($form_id)
     {
+        $aspect_model = new Aspect;
+        $item_model = new Item;
+        $alternative_model = new Alternative;
+
+        // get aspects
+        $aspects = $aspect_model->where("form_id", $form_id)->where("state_id", 1)->orderBy("order", "asc")->findAll();
+
+        // get items of each aspect
+        foreach($aspects as $aspect)
+        {
+            $aspect_id = $aspect->id;
+            $items = $item_model->where("aspect_id", $aspect_id)->where("state_id", 1)->orderBy("order", "asc")->findAll();
+
+            // get alternatives of each item
+            foreach($items as $item)
+            {
+                if($item->item_type_id == 3 || $item->item_type_id == 4)
+                {
+                    $item_id = $item->id;
+                    $alternatives = $alternative_model->where("item_id", $item_id)->where("state_id", 1)->orderBy("order", "asc")->findAll();
+                    
+                    $item->alternatives = $alternatives;
+                }
+            }
+
+            $aspect->items = $items;
+        }
 
         $data = array(
             "form_id" => $form_id,
+            "aspects" => $aspects,
         );
 
         return view("pages/ConfigItems", $data);

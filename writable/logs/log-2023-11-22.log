@@ -1,0 +1,9 @@
+CRITICAL - 2023-11-22 06:37:23 --> syntax error, unexpected T_INLINE_HTML "                      ", expecting "endswitch" or "case" or "default"
+in APPPATH\Views\pages\ConfigItems.php on line 42.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('pages/ConfigItems', [], true)
+ 3 APPPATH\Controllers\FormController.php(128): view('pages/ConfigItems', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->config_items('3')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

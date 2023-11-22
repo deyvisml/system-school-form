@@ -72,6 +72,8 @@ $routes->post('/formularios/create-aspect', 'AspectController::store');
 $routes->post('/aspects/delete', 'AspectController::delete');
 $routes->post('/aspects/update-order', 'AspectController::update_order');
 
+$routes->post('/items/delete', 'ItemController::delete');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

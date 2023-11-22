@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Item extends Model
+class Alternative extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'items';
+    protected $table            = 'alternatives';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
@@ -16,12 +16,11 @@ class Item extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         "id",
-        "question",
+        "alternative",
         "order",
-        "note",
-        "mandatory",
-        "item_type_id",
-        "aspect_id",
+        "for_fill",
+        "item_id",
+        "state_id",
     ];
 
     // Dates

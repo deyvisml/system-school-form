@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Aspect;
+use App\Models\Item;
 
 class AspectController extends BaseController
 {
@@ -31,13 +32,29 @@ class AspectController extends BaseController
 
         $record_was_inserted = $aspect_model->insert($data, false);
 
-        $message="El aspecto se creo exitosamente!";
+        $message = "El aspecto se creo exitosamente!";
         $error_occurred = false;
         
         if(!$record_was_inserted)
         {
-            $message="Ocurrio un error en la creación del aspecto.";
+            $message = "Ocurrio un error en la creación del aspecto.";
             $error_occurred = true;
+        }
+        else
+        {
+            // creating an item (each aspect has at least one item)
+            $item_model = new Item;
+
+            $aspect_id = $aspect_model->getInsertID();
+            
+            $data = [
+                "order" => 1,
+                "mandatory" => 1,
+                "item_type_id" => 1,
+                "aspect_id" => $aspect_id,
+            ];
+
+            $item_model->insert($data, false);
         }
 
         echo json_encode(array(
@@ -59,7 +76,7 @@ class AspectController extends BaseController
         
         if(!$record_was_deleted)
         {
-            $message="Ocurrio un error en la eliminación del aspecto.";
+            $message = "Ocurrio un error en la eliminación del aspecto.";
             $error_occurred = true;
         }
 
@@ -79,7 +96,7 @@ class AspectController extends BaseController
             $aspect_model->update($aspect_id, ["order" => $i + 1]);
         }
 
-        $message="Los aspectos fueron actualizados exitosamente!";
+        $message = "Los aspectos fueron actualizados exitosamente!";
         $error_occurred = false;
 
         echo json_encode(array(
