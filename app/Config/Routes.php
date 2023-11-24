@@ -72,7 +72,16 @@ $routes->post('/formularios/create-aspect', 'AspectController::store');
 $routes->post('/aspects/delete', 'AspectController::delete');
 $routes->post('/aspects/update-order', 'AspectController::update_order');
 
+$routes->post('/items/create', 'ItemController::create');
 $routes->post('/items/delete', 'ItemController::delete');
+$routes->post('/items/update-mandatory', 'ItemController::update_mandatory');
+$routes->post('/items/update-item-type-id', 'ItemController::update_item_type_id');
+$routes->post('/items/update-item-value', 'ItemController::update_item_value');
+$routes->post('/items/update-items-order', 'ItemController::update_items_order');
+
+$routes->post('/alternatives/create', 'AlternativeController::create');
+$routes->post('/alternatives/delete', 'AlternativeController::delete');
+$routes->post('/alternatives/update-alternative-value', 'AlternativeController::update_alternative_value');
 
 /*
  * --------------------------------------------------------------------

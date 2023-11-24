@@ -22,6 +22,7 @@ class Item extends Model
         "mandatory",
         "item_type_id",
         "aspect_id",
+        "state_id",
     ];
 
     // Dates
