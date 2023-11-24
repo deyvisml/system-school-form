@@ -82,6 +82,7 @@ $routes->post('/items/update-items-order', 'ItemController::update_items_order')
 $routes->post('/alternatives/create', 'AlternativeController::create');
 $routes->post('/alternatives/delete', 'AlternativeController::delete');
 $routes->post('/alternatives/update-alternative-value', 'AlternativeController::update_alternative_value');
+$routes->post('/alternatives/update-alternatives-order', 'AlternativeController::update_alternatives_order');
 
 /*
  * --------------------------------------------------------------------

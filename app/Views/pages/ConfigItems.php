@@ -55,7 +55,7 @@
                         <div class="col-12 col-md-10 d-flex flex-column gap-2">
                           <ul class="alternatives draggable-alternatives-container d-flex flex-column gap-2 list-unstyled" data-item-type="<?php echo ($item->item_type_id == 3) ? 'simple-select-answer' : 'multiple-select-answer'; ?>">
                             <?php foreach ($item->alternatives as $alternative) : ?>
-                              <li class="d-flex justify-content-center align-items-center gap-2" id="alternative-<?php echo $alternative->id; ?>">
+                              <li class="d-flex justify-content-center align-items-center gap-2" data-item-id="<?php echo $item->id; ?>" data-alternative-id="<?php echo $alternative->id; ?>" id="alternative-<?php echo $alternative->id; ?>">
                                 <i class="ti-move fs-6 p-1" style="cursor:pointer;"></i>
                                 <?php echo ($item->item_type_id == 3) ? '<i class="ti-control-record fs-3"></i>' : '<i class="ti-control-stop fs-3"></i>'; ?>
                                 <input class="alternative form-control form-control-sm" type="text" value="<?php echo $alternative->alternative ?>" data-alternative-id="<?php echo $alternative->id; ?>" onChange="change_alternative_value(this)">
@@ -129,6 +129,10 @@
           animation: 150, // Duración de la animación en milisegundos
           direction: "vertical",
           handle: ".ti-move",
+          onSort: function (/**Event*/evt) {
+            var item_id = evt.item.dataset.itemId;
+            change_alternatives_order(item_id);
+          },
       });
     });
   }
@@ -177,7 +181,7 @@
                                           <li class="d-flex justify-content-center align-items-center gap-2" id="alternative-${alternative_id}">
                                             <i class="ti-move fs-6 p-1" style="cursor:pointer;"></i>
                                             <i class="ti-control-record fs-3"></i>
-                                            <input class="alternative form-control form-control-sm" type="text" value="Opción" data-alternative-id="${alternative_id}" onChange="change_alternative_value(this)">
+                                            <input class="alternative form-control form-control-sm" type="text" value="Opción 1" data-alternative-id="${alternative_id}" onChange="change_alternative_value(this)">
                                             <i class="ti-close fs-5" style="cursor:pointer;" data-alternative-id="${alternative_id}" onClick="delete_alternative(this)"></i>
                                           </li>
                                         </ul>
@@ -204,7 +208,7 @@
                                           <li class="d-flex justify-content-center align-items-center gap-2" id="alternative-${alternative_id}">
                                             <i class="ti-move fs-6 p-1" style="cursor:pointer;"></i>
                                             <i class="ti-control-stop fs-3"></i>
-                                            <input class="alternative form-control form-control-sm" type="text" value="Opción" data-alternative-id="${alternative_id}" onChange="change_alternative_value(this)">
+                                            <input class="alternative form-control form-control-sm" type="text" value="Opción 1" data-alternative-id="${alternative_id}" onChange="change_alternative_value(this)">
                                             <i class="ti-close fs-5" style="cursor:pointer;" data-alternative-id="${alternative_id}" onClick="delete_alternative(this)"></i>
                                           </li>
                                         </ul>
@@ -229,7 +233,11 @@
       var sortable = new Sortable(draggable_container_e, {
           animation: 150, // Duración de la animación en milisegundos
           direction: "vertical",
-          handle: ".ti-move"
+          handle: ".ti-move",
+          onSort: function (/**Event*/evt) {
+            var item_id = evt.item.dataset.itemId;
+            change_alternatives_order(item_id);
+          },
       });
     }
   }
@@ -263,7 +271,7 @@
 
     var alternative_id = result.alternative_id;
 
-    var alternative_html = `<li class="d-flex justify-content-center align-items-center gap-2" id="alternative-${alternative_id}">
+    var alternative_html = `<li class="d-flex justify-content-center align-items-center gap-2" data-item-id="${item_id}" data-alternative-id="${alternative_id}" id="alternative-${alternative_id}">
                               <i class="ti-move fs-6 p-1" style="cursor:pointer;"></i>`
     if(item_type == "simple-select-answer")
     {
@@ -289,6 +297,21 @@
 
     if(result.error_occurred) throw new Error(result.message);
   }
+
+  async function change_alternatives_order(item_id)
+  {
+    var alternatives = document.querySelectorAll(`#item-${item_id} ul.alternatives > li`);
+
+    var alternatives_ids = [];
+    alternatives.forEach(alternative => {
+        var alternative_id = Number(alternative.dataset.alternativeId);
+        alternatives_ids.push(alternative_id);
+    });
+
+    var result = await api_call_update_alternatives_order_alternative(alternatives_ids);
+
+    if(result.error_occurred) throw new Error(result.message);
+  }
 </script>
 
 <script>
@@ -296,7 +319,7 @@
   {
     var item_id = element.dataset.itemId;
     var item_element = document.querySelector(`#item-${item_id}`);
-    console.log( "gaa", item_id );
+
     var result = api_call_delete_item(item_id);
 
     if(result.error_occurred) throw new Error(result.message);
@@ -335,10 +358,7 @@
 
     if(result.error_occurred) throw new Error(result.message);
     
-    console.log( "result:",result );
     var new_item_id = result["item_id"];
-    console.log( "new_item_id:",new_item_id );
-    console.log( "type:", typeof result );
     
     var new_item_html = `<li class="position-relative border border-1  rounded shadow-sm" style="background-color: white; border-color: #ccc !important;" data-aspect-id="${aspect_id}" data-item-id="${new_item_id}" id="item-${new_item_id}">
                           <div class="drag-button-container p-2 w-100" style="cursor: move;">
@@ -378,9 +398,7 @@
     
     item_element.insertAdjacentHTML("afterend", new_item_html);
   }
-</script>
 
-<script>
   async function change_items_order(aspect_id)
   {
     var items = document.querySelectorAll(`#aspect-${aspect_id} ul.items > li`);
@@ -456,7 +474,7 @@
 
   async function api_call_update_item_value_item(item_value, item_id)
   {
-    openCargar();
+    //openCargar();
     var result;
 
     await $.post("<?php echo base_url("/items/update-item-value") ?>", {"item_value": item_value, "item_id": item_id,}, async function(data){
@@ -510,10 +528,23 @@
 
   async function api_call_update_alternative_value_alternative(alternative_value, alternative_id)
   {
-    openCargar();
+    //openCargar();
     var result;
 
     await $.post("<?php echo base_url("/alternatives/update-alternative-value") ?>", {"alternative_value": alternative_value, "alternative_id": alternative_id,}, async function(data){
+      result = await JSON.parse(data);
+      closeCargar();
+    });
+
+    return result;
+  }
+
+  async function api_call_update_alternatives_order_alternative(alternatives_ids)
+  {
+    openCargar();
+    var result;
+
+    await $.post("<?php echo base_url("/alternatives/update-alternatives-order") ?>", {"alternatives_ids": alternatives_ids,}, async function(data){
       result = await JSON.parse(data);
       closeCargar();
     });

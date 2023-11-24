@@ -91,4 +91,35 @@ class AlternativeController extends BaseController
             "error_occurred" => $error_occurred,
         ));
     }
+
+    public function update_alternatives_order()
+    {
+        $alternatives_ids = $this->request->getPost('alternatives_ids');
+        $alternative_model = new Alternative;
+
+        $data = [];
+        foreach ($alternatives_ids as $index => $alternative_id) 
+        {
+            $data[] = [
+                'id' => $alternative_id,
+                'order' => $index + 1,
+            ];
+        }
+
+        $records_were_updated = $alternative_model->updateBatch($data, 'id');
+
+        $message = "Las alternativas se actualizarón exitosamente!";
+        $error_occurred = false;
+        
+        if(!$records_were_updated)
+        {
+            $message = "Ocurrio un error en la actualización de las alternativas.";
+            $error_occurred = true;
+        }
+
+        echo json_encode(array(
+            "message" => $message,
+            "error_occurred" => $error_occurred,
+        ));
+    }
 }

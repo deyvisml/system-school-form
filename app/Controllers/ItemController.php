@@ -8,12 +8,6 @@ use App\Models\Alternative;
 
 class ItemController extends BaseController
 {
-    public function __construct()
-    {
-        // Carga la librería de base de datos en el constructor
-        $this->db = \Config\Database::connect();
-    }
-
     public function index()
     {
         //
@@ -159,11 +153,11 @@ class ItemController extends BaseController
         {
             $data[] = [
                 'id' => $item_id,
-                'order' => $index + 1 // Reemplaza 'campo_a_actualizar' con el nombre del campo que deseas actualizar
+                'order' => $index + 1,
             ];
         }
 
-        $records_were_updated = $this->db->table('items')->updateBatch($data, 'id');
+        $records_were_updated = $item_model->updateBatch($data, 'id');
 
         $message = "Los items se actualizarón exitosamente!";
         $error_occurred = false;
