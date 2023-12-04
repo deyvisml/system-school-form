@@ -16,6 +16,7 @@ class AlternativeController extends BaseController
     {
         $alternative = $this->request->getPost('alternative');
         $order = $this->request->getPost('order');
+        $free = $this->request->getPost('free');
         $item_id = $this->request->getPost('item_id');
 
         $alternative_model = new Alternative;
@@ -23,6 +24,7 @@ class AlternativeController extends BaseController
         $data = [
             "alternative" => $alternative,
             "order" => $order,
+            "free" => $free,
             "item_id" => $item_id,
             "state_id" => 1,
         ];

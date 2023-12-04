@@ -73,7 +73,7 @@ class Application extends BaseController
             "contacto_datos"=>"Ing. Víctor Hugo BEJAR GONZALES",
             "contacto_celular"=>"958273933",
             "contacto_email"=>"victor.bejar.g@gmail.com",
-            "base"=>base_url("public"),
+            "base"=>base_url(),
             "go"=>$this->request->getVar('go'),
         );
         $vistas = view('sistema/vheader',$data).

@@ -14,7 +14,7 @@
 
                         <!-- Brand logo -->
                         <a href="http://xura-inc.com" class="brand-img stretched-link" target="_blank">
-                            <img src="<?php echo base_url("public/img/xurav2.png") ?>" alt="Nifty Logo" class="Nifty logo" width="40" height="40">
+                            <img src="<?php echo base_url("/img/xurav2.png") ?>" alt="Nifty Logo" class="Nifty logo" width="40" height="40">
                         </a>
 
                         <!-- Brand title -->
@@ -311,7 +311,7 @@
                                     <div class="flex-shrink-0">
                                         <img 
                                             class="img-sm rounded-circle" 
-                                            src="<?=base_url("public/img/usuario.webp");?>" alt="Profile Picture" loading="lazy"
+                                            src="<?=base_url("img/usuario.webp");?>" alt="Profile Picture" loading="lazy"
                                         >
                                     </div>
                                     <div class="flex-grow-1 ms-3">
@@ -327,7 +327,7 @@
                                         <div class="list-group list-group-borderless mb-3">
                                             <div class="list-group-item text-center border-bottom mb-3">
                                                 <p class="h1 display-1 text-green">
-                                                    <img src="<?= base_url("public/img/".$logo); ?>" alt="" width="100%">
+                                                    <img src="<?= base_url("img/".$logo); ?>" alt="" width="100%">
                                                 </p>
                                                 <!--
                                                 <p class="h6 mb-0"><i class="demo-pli-basket-coins fs-3 me-2"></i>
@@ -428,7 +428,7 @@
                         <div class="mininav-toggle text-center py-2">
                             <img 
                                 class="mainnav__avatar img-md border" 
-                                src="<?=base_url("public/img/".$logo); ?>" 
+                                src="<?=base_url("img/".$logo); ?>" 
                                 alt="Profile Picture"
                             >
                         </div>

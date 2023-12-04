@@ -63,6 +63,30 @@ class AspectController extends BaseController
         ));
     }
 
+    public function update_name()
+    {
+        $aspect_name = $this->request->getPost('aspect_name');
+        $aspect_id = $this->request->getPost('aspect_id');
+
+        $aspect_model = new Aspect;
+
+        $record_was_updated = $aspect_model->update($aspect_id, ["name" => $aspect_name]);
+
+        $message = "El aspecto se actualizó exitosamente!";
+        $error_occurred = false;
+        
+        if(!$record_was_updated)
+        {
+            $message = "Ocurrio un error en la actualización del aspecto.";
+            $error_occurred = true;
+        }
+
+        echo json_encode(array(
+            "message" => $message,
+            "error_occurred" => $error_occurred,
+        ));
+    }
+
     public function delete()
     {
         $aspect_id = $this->request->getPost('aspect_id');

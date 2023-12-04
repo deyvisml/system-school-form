@@ -34,7 +34,7 @@ class FormController extends BaseController
 
         $form_model = new Form;
 
-        $forms = $form_model->where("user_id", $user_id)->where("state_id", 1)->findAll();
+        $forms = $form_model->where("user_id", $user_id)->where("state_id", 1)->orderBy("created_at", "desc")->findAll();
 
         $data = array(
             "forms" => $forms,

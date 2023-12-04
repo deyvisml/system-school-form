@@ -14,7 +14,7 @@
         <i class="ti-eye"></i> Ver</button>
         <button type="button" class="btn btn-secondary"
         onClick='cargarFuncion("<?php echo "/formularios/".$id."/users"; ?>","<?php echo $modulo; ?>","<?php echo $nombre; ?>","<?php echo $descripcion; ?>")'>
-        <i class="ti-user"></i> Usuarios</button>
+        <i class="ti-user"></i> IIEE</button>
     </div>
   </div>
 </div>

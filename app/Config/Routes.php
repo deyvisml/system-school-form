@@ -69,6 +69,7 @@ $routes->post('/formularios/(:num)/show', 'FormController::show');
 $routes->post('/formularios/(:num)/users', 'FormController::manage_users');
 
 $routes->post('/formularios/create-aspect', 'AspectController::store');
+$routes->post('/aspects/update-name', 'AspectController::update_name');
 $routes->post('/aspects/delete', 'AspectController::delete');
 $routes->post('/aspects/update-order', 'AspectController::update_order');
 

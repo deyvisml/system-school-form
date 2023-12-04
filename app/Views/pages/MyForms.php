@@ -59,7 +59,7 @@
                 <i class="ti-eye"></i> Ver</button>
                 <button type="button" class="btn btn-secondary"
                 onClick='cargarFuncion("<?php echo "/formularios/".$form->id."/users"; ?>", "Formularios", "Editar formulario", "rol descripton")'>
-                <i class="ti-user"></i> Usuarios</button>
+                <i class="ti-user"></i> IIEE</button>
             </div>
         </div>
     </li>

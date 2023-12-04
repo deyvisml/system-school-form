@@ -18,7 +18,7 @@ class Alternative extends Model
         "id",
         "alternative",
         "order",
-        "for_fill",
+        "free",
         "item_id",
         "state_id",
     ];

@@ -4,11 +4,11 @@
 <head>
 
     <?php
-        $base=base_url("public");
+        $base=base_url();
         $tipo=array("blurred","polygon","abstract");
         $t=$tipo[rand(0,2)];
         $i=rand(1,16);
-        $bg="background-image: url(http://localhost/plantillaciv4/public/assets/premium/boxed-bg/$t/bg/$i.jpg)";
+        $bg="background-image: url(http://localhost:8080/assets/premium/boxed-bg/$t/bg/$i.jpg)";
 
     ?>
 
@@ -70,7 +70,7 @@
                             <div class="row text-center">
                                 <div class="col-sm-12">
                                     <img 
-                                        src="<?php echo base_url("public/img/".$logo); ?>" 
+                                        src="<?php echo base_url("img/".$logo); ?>" 
                                         alt=""
                                         height="100px"
                                     >  

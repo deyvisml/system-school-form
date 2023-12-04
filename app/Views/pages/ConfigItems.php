@@ -20,7 +20,7 @@
         <div class="accordion-body" style="background-color: #f0eaf9;">
           <ul class="items list-unstyled d-flex flex-column gap-3 draggable-items-container">
             <?php foreach ($aspect->items as $item) : ?>
-              <li class="position-relative border border-1 rounded shadow-sm" style="background-color: white; border-color: #ccc !important;" data-aspect-id="<?php echo $aspect->id; ?>" data-item-id="<?php echo $item->id; ?>" id="item-<?php echo $item->id; ?>">
+              <li class="item position-relative border border-1 rounded shadow-sm" style="background-color: white; border-color: #ccc !important;" data-aspect-id="<?php echo $aspect->id; ?>" data-item-id="<?php echo $item->id; ?>" id="item-<?php echo $item->id; ?>">
                 <div class="drag-button-container p-2 w-100" style="cursor: move;">
                   <i class="ti-move fs-5 d-block text-center"></i>
                 </div>
@@ -52,22 +52,39 @@
                       <?php case 3: ?>
                         
                       <?php case 4: ?>
+                        <?php $has_free_alternative = false; ?>
                         <div class="col-12 col-md-10 d-flex flex-column gap-2">
                           <ul class="alternatives draggable-alternatives-container d-flex flex-column gap-2 list-unstyled" data-item-type="<?php echo ($item->item_type_id == 3) ? 'simple-select-answer' : 'multiple-select-answer'; ?>">
                             <?php foreach ($item->alternatives as $alternative) : ?>
-                              <li class="d-flex justify-content-center align-items-center gap-2" data-item-id="<?php echo $item->id; ?>" data-alternative-id="<?php echo $alternative->id; ?>" id="alternative-<?php echo $alternative->id; ?>">
-                                <i class="ti-move fs-6 p-1" style="cursor:pointer;"></i>
-                                <?php echo ($item->item_type_id == 3) ? '<i class="ti-control-record fs-3"></i>' : '<i class="ti-control-stop fs-3"></i>'; ?>
-                                <input class="alternative form-control form-control-sm" type="text" value="<?php echo $alternative->alternative ?>" data-alternative-id="<?php echo $alternative->id; ?>" onChange="change_alternative_value(this)">
-                                <i class="ti-close fs-5" style="cursor:pointer;" data-alternative-id="<?php echo $alternative->id; ?>" data-item-id="<?php echo $item->id; ?>" onClick="delete_alternative(this)"></i>
-                              </li>
+                              <?php if ($alternative->free) : ?>
+                                <?php $has_free_alternative = true; ?>
+                                <li class="d-flex justify-content-center align-items-center gap-2" data-alternative-type="free-alternative" data-item-id="<?php echo $item->id; ?>" data-alternative-id="<?php echo $alternative->id; ?>" id="alternative-<?php echo $alternative->id; ?>">
+                                  <i class="ti-move fs-6 p-1" style="visibility:hidden;"></i>
+                                  <?php echo ($item->item_type_id == 3) ? '<i class="ti-control-record fs-3"></i>' : '<i class="ti-control-stop fs-3"></i>'; ?>
+                                  <input class="alternative form-control form-control-sm" type="text" value="<?php echo $alternative->alternative ?>" data-alternative-id="<?php echo $alternative->id; ?>" onChange="change_alternative_value(this)" readonly>
+                                  <i class="ti-close fs-5" style="cursor:pointer;" data-alternative-id="<?php echo $alternative->id; ?>" data-item-id="<?php echo $item->id; ?>" onClick="delete_alternative(this)"></i>
+                                </li>
+                              <?php else: ?>
+                                <li class="d-flex justify-content-center align-items-center gap-2 draggable-alternative" data-item-id="<?php echo $item->id; ?>" data-alternative-id="<?php echo $alternative->id; ?>" id="alternative-<?php echo $alternative->id; ?>">
+                                  <i class="ti-move fs-6 p-1" style="cursor:pointer;"></i>
+                                  <?php echo ($item->item_type_id == 3) ? '<i class="ti-control-record fs-3"></i>' : '<i class="ti-control-stop fs-3"></i>'; ?>
+                                  <input class="alternative form-control form-control-sm" type="text" value="<?php echo $alternative->alternative ?>" data-alternative-id="<?php echo $alternative->id; ?>" onChange="change_alternative_value(this)">
+                                  <i class="ti-close fs-5" style="cursor:pointer;" data-alternative-id="<?php echo $alternative->id; ?>" data-item-id="<?php echo $item->id; ?>" onClick="delete_alternative(this)"></i>
+                                </li>
+                              <?php endif; ?>
                             <?php endforeach; ?>
                           </ul>
 
                           <div class="d-flex justify-content-start align-items-center gap-2">
                             <i class="ti-move fs-6 p-1" style="visibility:hidden;"></i>
                             <?php echo ($item->item_type_id == 3) ? '<i class="ti-control-record fs-3"></i>' : '<i class="ti-control-stop fs-3"></i>'; ?>
-                            <span class="p-1 px-2 rounded" style="cursor:pointer; background-color: #eee;" data-item-id="<?php echo $item->id; ?>" onClick="add_alternative(this)">Añadir opción</span>
+                            <div class="d-flex gap-1 justify-align-content-between align-items-center ">
+                              <span class="p-1 px-2 rounded" style="cursor:pointer; background-color: #ddd;" data-item-id="<?php echo $item->id; ?>" onClick="add_alternative(this)">Añadir opción</span>
+                              <div class="button-free-alternative-container d-flex gap-1 justify-align-content-between align-items-center" style="<?php echo $has_free_alternative ? "visibility: hidden;" : ""; ?>">
+                                <span>o</span>
+                                <span class="p-1 px-2 rounded text-primary " style="cursor:pointer; background-color: #eee;" data-item-id="<?php echo $item->id; ?>" onClick="add_free_alternative(this)">Respuesta libre</span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <?php break; ?>
@@ -97,10 +114,6 @@
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
-        integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 <script>
   function init_make_dragabble_items_containers()
   {
@@ -128,6 +141,7 @@
       var sortable = new Sortable(draggable_alternatives_container, {
           animation: 150, // Duración de la animación en milisegundos
           direction: "vertical",
+          draggable: ".draggable-alternative",
           handle: ".ti-move",
           onSort: function (/**Event*/evt) {
             var item_id = evt.item.dataset.itemId;
@@ -171,14 +185,14 @@
         var result = await api_call_update_item_type_id_item(item_id, item_type_id);
         if(result.error_occurred) throw new Error(result.message);
 
-        var result = await api_call_create_alternative("Opción 1", order=1, item_id);
+        var result = await api_call_create_alternative("Opción 1", order=1, free=0, item_id);
         if(result.error_occurred) throw new Error(result.message);
 
         var alternative_id = result.alternative_id;
 
         var alternatives_body_html = `<div class="col-12 col-md-10 d-flex flex-column gap-2">
                                         <ul class="alternatives draggable-alternatives-container d-flex flex-column gap-2 list-unstyled" data-item-type="simple-select-answer">
-                                          <li class="d-flex justify-content-center align-items-center gap-2" id="alternative-${alternative_id}">
+                                          <li class="d-flex justify-content-center align-items-center gap-2 draggable-alternative" data-item-id=${item_id} data-alternative-id=${alternative_id} id="alternative-${alternative_id}">
                                             <i class="ti-move fs-6 p-1" style="cursor:pointer;"></i>
                                             <i class="ti-control-record fs-3"></i>
                                             <input class="alternative form-control form-control-sm" type="text" value="Opción 1" data-alternative-id="${alternative_id}" onChange="change_alternative_value(this)">
@@ -189,7 +203,13 @@
                                         <div class="d-flex justify-content-start align-items-center gap-2">
                                           <i class="ti-move fs-6 p-1" style="visibility:hidden;"></i>
                                           <i class="ti-control-record fs-3"></i>
-                                          <span class="p-1 px-2 rounded" style="cursor:pointer; background-color: #eee;" data-item-id="${item_id}" onClick="add_alternative(this)">Añadir opción</span>
+                                          <div class="d-flex gap-1 justify-align-content-between align-items-center ">
+                                            <span class="p-1 px-2 rounded" style="cursor:pointer; background-color: #ddd;" data-item-id="${item_id}" onClick="add_alternative(this)">Añadir opción</span>
+                                            <div class="button-free-alternative-container d-flex gap-1 justify-align-content-between align-items-center">
+                                              <span>o</span>
+                                              <span class="p-1 px-2 rounded text-primary " style="cursor:pointer; background-color: #eee;" data-item-id="${item_id}" onClick="add_free_alternative(this)">Respuesta libre</span>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>`;
         break;
@@ -198,14 +218,14 @@
         var result = await api_call_update_item_type_id_item(item_id, item_type_id);
         if(result.error_occurred) throw new Error(result.message);
 
-        var result = await api_call_create_alternative("Opción 1", order=1, item_id);
+        var result = await api_call_create_alternative("Opción 1", order=1, free=0, item_id);
         if(result.error_occurred) throw new Error(result.message);
 
         var alternative_id = result.alternative_id;
 
         var alternatives_body_html = `<div class="col-12 col-md-10 d-flex flex-column gap-2">
                                         <ul class="alternatives draggable-alternatives-container d-flex flex-column gap-2 list-unstyled" data-item-type="multiple-select-answer">
-                                          <li class="d-flex justify-content-center align-items-center gap-2" id="alternative-${alternative_id}">
+                                          <li class="d-flex justify-content-center align-items-center gap-2 draggable-alternative" data-item-id=${item_id} data-alternative-id=${alternative_id} id="alternative-${alternative_id}">
                                             <i class="ti-move fs-6 p-1" style="cursor:pointer;"></i>
                                             <i class="ti-control-stop fs-3"></i>
                                             <input class="alternative form-control form-control-sm" type="text" value="Opción 1" data-alternative-id="${alternative_id}" onChange="change_alternative_value(this)">
@@ -214,9 +234,15 @@
                                         </ul>
 
                                         <div class="d-flex justify-content-start align-items-center gap-2">
-                                        <i class="ti-move fs-6 p-1" style="visibility:hidden;"></i>
+                                          <i class="ti-move fs-6 p-1" style="visibility:hidden;"></i>
                                           <i class="ti-control-stop fs-3"></i>
-                                          <span class="p-1 px-2 rounded" style="cursor:pointer; background-color: #eee;" data-item-id="${item_id}" onClick="add_alternative(this)">Añadir opción</span>
+                                          <div class="d-flex gap-1 justify-align-content-between align-items-center ">
+                                            <span class="p-1 px-2 rounded" style="cursor:pointer; background-color: #ddd;" data-item-id="${item_id}" onClick="add_alternative(this)">Añadir opción</span>
+                                            <div class="button-free-alternative-container d-flex gap-1 justify-align-content-between align-items-center">
+                                              <span>o</span>
+                                              <span class="p-1 px-2 rounded text-primary " style="cursor:pointer; background-color: #eee;" data-item-id="${item_id}" onClick="add_free_alternative(this)">Respuesta libre</span>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>`;
         break;
@@ -248,6 +274,20 @@
   {
     var alternative_id = element.dataset.alternativeId;
     var alternative_element = document.querySelector(`#alternative-${alternative_id}`);
+    var item_id = alternative_element.dataset.itemId;
+    var alternative_type = alternative_element.dataset.alternativeType;
+
+    var num_alternatives = document.querySelectorAll(`#item-${item_id} ul.alternatives li.draggable-alternative`).length;
+    console.log( "num_alternatives", num_alternatives );
+    if (num_alternatives == 1 && alternative_type != "free-alternative") {
+      alert("No es posible eliminar esta alternativa.")
+      return;
+    }
+    else if (alternative_type == "free-alternative") {
+      // show button add respuesta libre
+      var button_free_alternative_container = document.querySelector(`#item-${item_id} .button-free-alternative-container`);
+      button_free_alternative_container.style.visibility = "visible";
+    }
 
     var result = await api_call_delete_alternative(alternative_id);
     if(result.error_occurred) throw new Error(result.message);
@@ -261,17 +301,20 @@
     var item_id = element.dataset.itemId;
     var alternative_container = document.querySelector(`#item-${item_id} ul.alternatives`);
     var item_type = alternative_container.dataset.itemType;
-
-    var num_alternatives = alternative_container.querySelectorAll('li').length;
+    
+    var num_alternatives = alternative_container.querySelectorAll('li.draggable-alternative').length;
     var order = num_alternatives + 1;
     var alternative = "Opción " + order;
+    
+    var last_draggable_alternative = alternative_container.querySelectorAll(`li.draggable-alternative`)[num_alternatives-1];
+    console.log( "last_draggable_alternative", last_draggable_alternative );
 
-    var result = await api_call_create_alternative(alternative, order, item_id);
+    var result = await api_call_create_alternative(alternative, order, free=0, item_id);
     if(result.error_occurred) throw new Error(result.message);
 
     var alternative_id = result.alternative_id;
 
-    var alternative_html = `<li class="d-flex justify-content-center align-items-center gap-2" data-item-id="${item_id}" data-alternative-id="${alternative_id}" id="alternative-${alternative_id}">
+    var alternative_html = `<li class="d-flex justify-content-center align-items-center gap-2 draggable-alternative" data-item-id="${item_id}" data-alternative-id="${alternative_id}" id="alternative-${alternative_id}">
                               <i class="ti-move fs-6 p-1" style="cursor:pointer;"></i>`
     if(item_type == "simple-select-answer")
     {
@@ -285,7 +328,42 @@
                         <i class="ti-close fs-5" style="cursor:pointer;" data-alternative-id="${alternative_id}" onClick="delete_alternative(this)"></i>
                       </li>`;
 
-    alternative_container.insertAdjacentHTML("beforeend", alternative_html)
+    last_draggable_alternative.insertAdjacentHTML("afterend", alternative_html)
+  }
+
+  async function add_free_alternative(element)
+  {
+    var item_id = element.dataset.itemId;
+    var alternative_container = document.querySelector(`#item-${item_id} ul.alternatives`);
+    var item_type = alternative_container.dataset.itemType;
+
+    var alternative = "Otra...";
+
+    var result = await api_call_create_alternative(alternative, order=9999, free=1, item_id);
+    if(result.error_occurred) throw new Error(result.message);
+
+    var alternative_id = result.alternative_id;
+
+    var alternative_html = `<li class="d-flex justify-content-center align-items-center gap-2" data-alternative-type="free-alternative" data-item-id="${item_id}" data-alternative-id="${alternative_id}" id="alternative-${alternative_id}">
+                              <i class="ti-move fs-6 p-1" style="visibility:hidden;"></i>`
+    if(item_type == "simple-select-answer")
+    {
+      alternative_html += `<i class="ti-control-record fs-3"></i>`;
+    }
+    else
+    {
+      alternative_html += `<i class="ti-control-stop fs-3"></i>`;
+    }
+    alternative_html += `<input class="alternative form-control form-control-sm" type="text" value="${alternative}" data-alternative-id="${alternative_id}" onChange="change_alternative_value(this)" readonly>
+                        <i class="ti-close fs-5" style="cursor:pointer;" data-alternative-id="${alternative_id}" onClick="delete_alternative(this)"></i>
+                      </li>`;
+
+    alternative_container.insertAdjacentHTML("beforeend", alternative_html);
+
+    // hide button add respuesta libre
+    var button_free_alternative_container = document.querySelector(`#item-${item_id} .button-free-alternative-container`);
+
+    button_free_alternative_container.style.visibility = "hidden";
   }
 
   async function change_alternative_value(element)
@@ -300,6 +378,7 @@
 
   async function change_alternatives_order(item_id)
   {
+    console.log( item_id );
     var alternatives = document.querySelectorAll(`#item-${item_id} ul.alternatives > li`);
 
     var alternatives_ids = [];
@@ -319,9 +398,16 @@
   {
     var item_id = element.dataset.itemId;
     var item_element = document.querySelector(`#item-${item_id}`);
+    var aspect_id = item_element.dataset.aspectId;
+
+    var num_items = document.querySelectorAll(`#aspect-${aspect_id} ul.items li.item`).length;    
+
+    if (num_items == 1) {
+      alert("No es posible eliminar este item.")
+      return;
+    }
 
     var result = api_call_delete_item(item_id);
-
     if(result.error_occurred) throw new Error(result.message);
 
     // removing alternative
@@ -360,7 +446,7 @@
     
     var new_item_id = result["item_id"];
     
-    var new_item_html = `<li class="position-relative border border-1  rounded shadow-sm" style="background-color: white; border-color: #ccc !important;" data-aspect-id="${aspect_id}" data-item-id="${new_item_id}" id="item-${new_item_id}">
+    var new_item_html = `<li class="item position-relative border border-1  rounded shadow-sm" style="background-color: white; border-color: #ccc !important;" data-aspect-id="${aspect_id}" data-item-id="${new_item_id}" id="item-${new_item_id}">
                           <div class="drag-button-container p-2 w-100" style="cursor: move;">
                             <i class="ti-move fs-5 d-block text-center"></i>
                           </div>
@@ -500,12 +586,12 @@
 </script>
 
 <script>
-  async function api_call_create_alternative(alternative="", order, item_id)
+  async function api_call_create_alternative(alternative="", order, free, item_id)
   {
     openCargar();
     var result;
 
-    await $.post("<?php echo base_url("/alternatives/create") ?>", {"alternative": alternative, "order": order, "item_id": item_id,}, async function(data){
+    await $.post("<?php echo base_url("/alternatives/create") ?>", {"alternative": alternative, "order": order, "free": free, "item_id": item_id,}, async function(data){
       result = await JSON.parse(data);
       closeCargar();
     });
