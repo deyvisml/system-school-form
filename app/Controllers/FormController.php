@@ -9,6 +9,7 @@ use App\Models\Item;
 use App\Models\Alternative;
 use App\Libraries\SuperComponente;
 use App\Libraries\Componente;
+use App\Libraries\Funciones;
 
 class FormController extends BaseController
 {
@@ -35,6 +36,12 @@ class FormController extends BaseController
         $form_model = new Form;
 
         $forms = $form_model->where("user_id", $user_id)->where("state_id", 1)->orderBy("created_at", "desc")->findAll();
+
+        foreach ($forms as $form) {
+            $created_at = new \DateTime($form->created_at);
+
+            $form->created_at = Funciones::get_fecha_formato($created_at->format('Y-m-d'));
+        }
 
         $data = array(
             "forms" => $forms,

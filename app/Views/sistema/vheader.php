@@ -122,7 +122,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
 
     <script>
         function cargarFuncion(url,modulo,nombre,descripcion){

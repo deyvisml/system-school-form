@@ -21,12 +21,12 @@
           <div class="modal-body">
             <div class="mb-3">
               <label for="form_name" class="form-label">Nombre</label>
-              <input type="text" class="form-control" name="form_name" id="form_name">
+              <input type="text" class="form-control" name="form_name">
             </div>
 
             <div class="mb-3">
               <label for="form_description" class="form-label">Descripción</label>
-              <input type="text" class="form-control" name="form_description" id="form_description">
+              <input type="text" class="form-control" name="form_description">
             </div>
           </div>
 
@@ -43,14 +43,12 @@
 
 <ul class="d-flex gap-3 flex-wrap list-unstyled" id="forms-list">
   <?php foreach ($forms as $form) : ?>
-    <li class="card border shadow col-12 col-md-3">
-        <div class="card-body pb-0 ">
-            <h5 class="card-title"><?php echo $form->name ?></h5>
-            <p class="card-text"><?php echo $form->description ?></p>
-        </div>
-
-        <div class="card-body">
-            <div class="btn-group w-100" role="group">
+    <li class="card border-2 shadow col-12 col-md-4">
+        <div class="card-body d-flex flex-column justify-content-between p-3">
+          <h5 class="card-title d-block " style="min-height: 40px;"><?php echo strlen($form->name) <= 70 ? $form->name : (substr($form->name, 0, 70) . "..."); ?></h5>
+   
+          <div class="">
+            <div class="btn-group w-100 mb-2" role="group">
                 <button type="button" class="btn btn-secondary"
                 onClick='cargarFuncion("<?php echo "/formularios/".$form->id."/config-aspects"; ?>", "Formularios", "Editar formulario", "rol descripton")'>
                 <i class="ti-pencil"></i> Editar</button>
@@ -61,6 +59,9 @@
                 onClick='cargarFuncion("<?php echo "/formularios/".$form->id."/users"; ?>", "Formularios", "Editar formulario", "rol descripton")'>
                 <i class="ti-user"></i> IIEE</button>
             </div>
+
+            <p class="card-text text-end"><span class="fw-semibold  ">Creado:</span> <?php echo $form->created_at ?></p>
+          </div>
         </div>
     </li>
   <?php endforeach; ?>

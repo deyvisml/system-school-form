@@ -189,8 +189,6 @@ function handle_submit_edit_aspect(aspect_id)
 
   if (aspect_name.length == 0) throw new Error("El nombre del aspecto esta vacio.");
 
-  console.log( "aspect_name", aspect_name );
-
   openCargar();
   $.post("<?php echo base_url("/aspects/update-name") ?>", {aspect_id, aspect_name,}, function(data){
       data=JSON.parse(data);

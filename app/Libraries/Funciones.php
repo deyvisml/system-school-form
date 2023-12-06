@@ -29,7 +29,7 @@ class Funciones{
         $tmp=explode("-",$fecha);
         return $tmp[2]." de ".strtolower(Funciones::get_mes((int)$tmp[1]))." de ".$tmp[0];
     }
-    public function get_fecha_formato($fecha,$formato="COMUN"){
+    public static function get_fecha_formato($fecha,$formato="COMUN"){
         $tmp=explode("-",$fecha);
         if($formato=="COMUN")
         return $tmp[2]."/".$tmp[1]."/".$tmp[0];
