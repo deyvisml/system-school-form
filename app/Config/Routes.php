@@ -67,6 +67,9 @@ $routes->post('/formularios/(:num)/config-aspects', 'FormController::config_aspe
 $routes->post('/formularios/(:num)/config-items', 'FormController::config_items/$1');
 $routes->post('/formularios/(:num)/show', 'FormController::show');
 $routes->post('/formularios/(:num)/users', 'FormController::manage_users');
+$routes->post('/forms/delete', 'FormController::delete');
+$routes->post('/forms/get-data-by-id', 'FormController::get_data_by_id');
+$routes->post('/forms/update', 'FormController::update/$1');
 
 $routes->post('/formularios/create-aspect', 'AspectController::store');
 $routes->post('/aspects/update-name', 'AspectController::update_name');

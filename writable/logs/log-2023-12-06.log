@@ -1,0 +1,8 @@
+CRITICAL - 2023-12-06 12:14:47 --> Undefined variable $forms
+in APPPATH\Controllers\FormController.php on line 77.
+ 1 APPPATH\Controllers\FormController.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $forms', 'APPPATH\\Controllers\\FormController.php', 77)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->get_data_by_id()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')

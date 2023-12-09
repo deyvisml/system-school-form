@@ -50,6 +50,37 @@ class FormController extends BaseController
         return view("pages/MyForms", $data);
     }
 
+    public function get_data_by_id()
+    {
+        $form_id = $this->request->getPost('form_id');
+
+        $form_model = new Form;
+
+        $form = $form_model->where("id", $form_id)->where("state_id", 1)->first();
+
+        $message = "La data se obtuvo exitosamente!";
+        $error_occurred = false;
+        
+        if(!$form)
+        {
+            $message = "Ocurrio un error en la obtención de la data.";
+            $error_occurred = true;
+        }
+        else
+        {
+            $created_at = new \DateTime($form->created_at);
+            $form->created_at = Funciones::get_fecha_formato($created_at->format('Y-m-d'));
+        }
+
+        $data = array(
+            "message" => $message,
+            "error_occurred" => $error_occurred,
+            "form" => $form,
+        );
+        
+        echo json_encode($data);
+    }
+
     public function store()
     {
         $form_name = $this->request->getPost('form_name');
@@ -75,6 +106,30 @@ class FormController extends BaseController
         if(!$record_was_inserted)
         {
             $message="Ocurrio un error en la creación del formulario.";
+            $error_occurred = true;
+        }
+
+        echo json_encode(array(
+            "message" => $message,
+            "error_occurred" => $error_occurred,
+        ));
+    }
+
+    public function update()
+    {
+        $form_id = $this->request->getPost('form_id');
+        $form_name = $this->request->getPost('form_name');
+        $form_description = $this->request->getPost('form_description');
+        $form_model = new Form;
+
+        $record_was_updated = $form_model->update($form_id, ["name" => $form_name, "description" => $form_description]);
+
+        $message = "El formulario se actualizó exitosamente!";
+        $error_occurred = false;
+        
+        if(!$record_was_updated)
+        {
+            $message = "Ocurrio un error en la actualización del formulario.";
             $error_occurred = true;
         }
 
@@ -133,6 +188,28 @@ class FormController extends BaseController
         );
 
         return view("pages/ConfigItems", $data);
+    }
+
+    public function delete()
+    {
+        $form_id = $this->request->getPost('form_id');
+        $form_model = new Form;
+
+        $record_was_deleted = $form_model->update($form_id, ["state_id" => 2]);
+
+        $message = "El formulario se elimino exitosamente!";
+        $error_occurred = false;
+        
+        if(!$record_was_deleted)
+        {
+            $message = "Ocurrio un error en la eliminación del formulario.";
+            $error_occurred = true;
+        }
+
+        echo json_encode(array(
+            "message" => $message,
+            "error_occurred" => $error_occurred,
+        ));
     }
 
 }
