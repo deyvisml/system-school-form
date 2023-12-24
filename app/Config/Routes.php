@@ -63,13 +63,17 @@ $routes->add('/testing', 'Application::testing');
 $routes->post('/formularios', 'FormController::index_own');
 $routes->post('/formularios/create-form', 'FormController::store');
 
-$routes->post('/formularios/(:num)/config-aspects', 'FormController::config_aspects/$1');
+$routes->post('/forms/(:num)/config-aspects', 'FormController::config_aspects/$1');
 $routes->post('/formularios/(:num)/config-items', 'FormController::config_items/$1');
 $routes->post('/formularios/(:num)/show', 'FormController::show');
 $routes->post('/formularios/(:num)/users', 'FormController::manage_users');
 $routes->post('/forms/delete', 'FormController::delete');
 $routes->post('/forms/get-data-by-id', 'FormController::get_data_by_id');
 $routes->post('/forms/update', 'FormController::update/$1');
+$routes->post('/forms/(:num)/asign-institutions', 'FormController::asign_institutions/$1');
+$routes->post('/forms/(:num)/just-view-form', 'FormController::just_view_form/$1');
+$routes->post('/forms/update-form-title-value', 'FormController::update_form_title_value');
+$routes->post('/forms/update-form-description-value', 'FormController::update_form_description_value');
 
 $routes->post('/formularios/create-aspect', 'AspectController::store');
 $routes->post('/aspects/update-name', 'AspectController::update_name');
@@ -88,6 +92,11 @@ $routes->post('/alternatives/delete', 'AlternativeController::delete');
 $routes->post('/alternatives/update-alternative-value', 'AlternativeController::update_alternative_value');
 $routes->post('/alternatives/update-alternatives-order', 'AlternativeController::update_alternatives_order');
 
+$routes->post('/institucion-form/create', 'InstitucionFormController::store');
+
+$routes->post('/formularios-asignados', 'InstitucionController::asign_forms');
+$routes->post('/instituciones/(:num)/formularios-asignados/(:num)/show', 'FormController::show_form/$1/$2');
+$routes->post('/instituciones/(:num)/formularios-asignados/(:num)/submit-form', 'FormController::submit_form/$1/$2');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Form extends Model
+class Answer extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'forms';
+    protected $table            = 'answers';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
@@ -15,13 +15,12 @@ class Form extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        "id",
-        "name",
-        "description",
-        "form_title",
-        "form_description",
-        "user_id",
-        "state_id",
+        'id',
+        'institucion_form_id',
+        'item_id',
+        'alternative_id',
+        'answer',
+        'state_id',
     ];
 
     // Dates

@@ -1,0 +1,16 @@
+CRITICAL - 2023-12-17 11:02:06 --> Undefined variable $alternatives_ids
+in APPPATH\Controllers\InstitucionFormController.php on line 24.
+ 1 APPPATH\Controllers\InstitucionFormController.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $alternatives_ids', 'APPPATH\\Controllers\\InstitucionFormController.php', 24)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\InstitucionFormController->store()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InstitucionFormController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2023-12-17 11:02:25 --> Undefined variable $alternatives_ids
+in APPPATH\Controllers\InstitucionFormController.php on line 24.
+ 1 APPPATH\Controllers\InstitucionFormController.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $alternatives_ids', 'APPPATH\\Controllers\\InstitucionFormController.php', 24)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\InstitucionFormController->store()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InstitucionFormController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')

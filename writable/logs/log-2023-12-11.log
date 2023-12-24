@@ -1,0 +1,29 @@
+ERROR - 2023-12-11 18:10:12 --> mysqli_sql_exception: Table 'system-school-form.institucionforms' doesn't exist in D:\Downloads\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Downloads\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `in...', 0)
+#1 D:\Downloads\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `in...')
+#2 D:\Downloads\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `in...')
+#3 D:\Downloads\system-school-form\system\Database\BaseBuilder.php(1778): CodeIgniter\Database\BaseConnection->query('INSERT INTO `in...', NULL, false)
+#4 D:\Downloads\system-school-form\system\Model.php(312): CodeIgniter\Database\BaseBuilder->insertBatch(Array, NULL, 100)
+#5 D:\Downloads\system-school-form\system\BaseModel.php(835): CodeIgniter\Model->doInsertBatch(Array, NULL, 100, false)
+#6 D:\Downloads\system-school-form\app\Controllers\InstitucionFormController.php(33): CodeIgniter\BaseModel->insertBatch(Array)
+#7 D:\Downloads\system-school-form\system\CodeIgniter.php(927): App\Controllers\InstitucionFormController->store()
+#8 D:\Downloads\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InstitucionFormController))
+#9 D:\Downloads\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Downloads\system-school-form\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\Downloads\system-school-form\system\Commands\Server\rewrite.php(46): require_once('D:\\Downloads\\sy...')
+#12 {main}
+CRITICAL - 2023-12-11 18:10:12 --> Table 'system-school-form.institucionforms' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `institucionforms` (`created_at`, `form_id`, `institution_id`, `updated_at`) VALUES (\'2023-12-11 18:10:12\',\'6\',\'1391\',\'2023-12-11 18:10:12\'), (\'2023-12-11 18:10:12\',\'6\',\'1357\',\'2023-12-11 18:10:12\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `institucionforms` (`created_at`, `form_id`, `institution_id`, `updated_at`) VALUES (\'2023-12-11 18:10:12\',\'6\',\'1391\',\'2023-12-11 18:10:12\'), (\'2023-12-11 18:10:12\',\'6\',\'1357\',\'2023-12-11 18:10:12\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `institucionforms` (`created_at`, `form_id`, `institution_id`, `updated_at`) VALUES (\'2023-12-11 18:10:12\',\'6\',\'1391\',\'2023-12-11 18:10:12\'), (\'2023-12-11 18:10:12\',\'6\',\'1357\',\'2023-12-11 18:10:12\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1778): CodeIgniter\Database\BaseConnection->query('INSERT INTO `institucionforms` (`created_at`, `form_id`, `institution_id`, `updated_at`) VALUES (\'2023-12-11 18:10:12\',\'6\',\'1391\',\'2023-12-11 18:10:12\'), (\'2023-12-11 18:10:12\',\'6\',\'1357\',\'2023-12-11 18:10:12\')', null, false)
+ 5 SYSTEMPATH\Model.php(312): CodeIgniter\Database\BaseBuilder->insertBatch([...], null, 100)
+ 6 SYSTEMPATH\BaseModel.php(835): CodeIgniter\Model->doInsertBatch([...], null, 100, false)
+ 7 APPPATH\Controllers\InstitucionFormController.php(33): CodeIgniter\BaseModel->insertBatch([...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\InstitucionFormController->store()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InstitucionFormController))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')

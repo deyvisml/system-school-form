@@ -61,13 +61,13 @@
           <div class="">
             <div class="btn-group w-100 mb-2" role="group">
                 <button type="button" class="btn btn-secondary"
-                onClick='cargarFuncion("<?php echo "/formularios/".$form->id."/config-aspects"; ?>", "Formularios", "Editar formulario", "rol descripton")'>
+                onClick='cargarFuncion("<?php echo "/forms/".$form->id."/config-aspects"; ?>", "Formularios", "Editar formulario", "rol descripton")'>
                 <i class="ti-pencil"></i> Editar</button>
                 <button type="button" class="btn btn-secondary"
-                onClick='cargarFuncion("<?php echo "/formularios/".$form->id."/show"; ?>", "Formularios", "Editar formulario", "rol descripton")'>
+                onClick='cargarFuncion("<?php echo "/forms/".$form->id."/just-view-form"; ?>", "Formularios", "Visualizar formulario", "rol descripton")'>
                 <i class="ti-eye"></i> Ver</button>
                 <button type="button" class="btn btn-secondary"
-                onClick='cargarFuncion("<?php echo "/formularios/".$form->id."/users"; ?>", "Formularios", "Editar formulario", "rol descripton")'>
+                onClick='cargarFuncion("<?php echo "/forms/".$form->id."/asign-institutions"; ?>", "Formularios", "Asignar instituciones", "rol descripton")'>
                 <i class="ti-user"></i> IIEE</button>
             </div>
 

@@ -2,11 +2,26 @@
   <p class="navbar-brand">Configurar Preguntas</p>
 
   <div>
-    <button type="button" class="btn btn-outline-secondary">Aspectos <i class="ti-settings"></i></button>
+    <button type="button" class="btn btn-outline-secondary"
+    onClick='cargarFuncion("<?php echo "/forms/".$form->id."/config-aspects"; ?>", "Formularios", "Editar formulario", "rol descripton")'>
+      Aspectos <i class="ti-settings"></i>
+    </button>
   </div>
 </nav>
 
 <div class="accordion gap-2 col-12 col-md-9 m-auto " id="accordion-panels">
+
+  <div class="border border-2 rounded p-3 mb-3" style="border-top: 10px solid #25476A !important;">
+    <div class="mb-2">
+      <label for="form_title" class="fw-semibold pb-1">Título:</label>
+      <input class="form-control" type="text" value="<?php echo $form->form_title; ?>" id="form_title" onChange="change_form_title_value(this)">
+    </div>
+
+    <div class="mb-0">
+      <label for="form_description" class="fw-semibold pb-1">Descripción:</label>
+      <textarea class="form-control" id="form_description" rows="3" onChange="change_form_description_value(this)"><?php echo $form->form_description; ?></textarea>
+    </div>
+  </div>
 
   <?php $first_loop = true; ?>
   <?php foreach ($aspects as $aspect) : ?>
@@ -501,9 +516,63 @@
   }
 </script>
 
+<script>
+  async function change_form_title_value(element)
+  {
+    var form_id = <?php echo $form->id; ?>;
+    var form_title = trim(element.value);
+
+    console.log( form_id, form_title );
+
+    var result = await api_call_update_form_title_value_form(form_title, form_id);
+
+    if(result.error_occurred) throw new Error(result.message);
+  }
+
+  async function change_form_description_value(element)
+  {
+    var form_id = <?php echo $form->id; ?>;
+    var form_description = trim(element.value);
+
+    console.log( form_id, form_description );
+
+    var result = await api_call_update_form_description_value_form(form_description, form_id);
+
+    if(result.error_occurred) throw new Error(result.message);
+  }
+</script>
+
 <!-- ============================================================= -->
 <!-- ========================= API CALLS ========================= -->
 <!-- ============================================================= -->
+
+<script>
+  async function api_call_update_form_title_value_form(form_title, form_id)
+  {
+    //openCargar();
+    var result;
+
+    await $.post("<?php echo base_url("/forms/update-form-title-value") ?>", {"form_title": form_title, "form_id": form_id,}, async function(data){
+      result = await JSON.parse(data);
+      closeCargar();
+    });
+
+    return result;
+  }
+
+  async function api_call_update_form_description_value_form(form_description, form_id)
+  {
+    //openCargar();
+    var result;
+
+    await $.post("<?php echo base_url("/forms/update-form-description-value") ?>", {"form_description": form_description, "form_id": form_id,}, async function(data){
+      result = await JSON.parse(data);
+      closeCargar();
+    });
+
+    return result;
+  }
+</script>
 
 <script>
   async function api_call_create_item(aspect_id)

@@ -1,0 +1,173 @@
+ERROR - 2023-12-22 11:19:38 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in D:\Downloads\system-school-form\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 D:\Downloads\system-school-form\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'root', '', 'system-school-f...', 3306, '', 0)
+#1 D:\Downloads\system-school-form\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Downloads\system-school-form\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Downloads\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Downloads\system-school-form\system\Model.php(185): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Downloads\system-school-form\system\BaseModel.php(524): CodeIgniter\Model->doFind(false, NULL)
+#6 D:\Downloads\system-school-form\app\Controllers\Login.php(25): CodeIgniter\BaseModel->find()
+#7 D:\Downloads\system-school-form\system\CodeIgniter.php(927): App\Controllers\Login->verificar()
+#8 D:\Downloads\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#9 D:\Downloads\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Downloads\system-school-form\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\Downloads\system-school-form\system\Commands\Server\rewrite.php(46): require_once('D:\\Downloads\\sy...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in D:\Downloads\system-school-form\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 D:\Downloads\system-school-form\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Downloads\system-school-form\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Downloads\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\Downloads\system-school-form\system\Model.php(185): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Downloads\system-school-form\system\BaseModel.php(524): CodeIgniter\Model->doFind(false, NULL)
+#5 D:\Downloads\system-school-form\app\Controllers\Login.php(25): CodeIgniter\BaseModel->find()
+#6 D:\Downloads\system-school-form\system\CodeIgniter.php(927): App\Controllers\Login->verificar()
+#7 D:\Downloads\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 D:\Downloads\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Downloads\system-school-form\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 D:\Downloads\system-school-form\system\Commands\Server\rewrite.php(46): require_once('D:\\Downloads\\sy...')
+#11 {main}
+CRITICAL - 2023-12-22 11:19:38 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `usua_user` = :usua_user:
+AND `usua_pass` = :usua_pass:
+AND `usua_esta_ide` = :usua_esta_ide:', [...], false)
+ 3 SYSTEMPATH\Model.php(185): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(524): CodeIgniter\Model->doFind(false, null)
+ 5 APPPATH\Controllers\Login.php(25): CodeIgniter\BaseModel->find()
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Login->verificar()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+ERROR - 2023-12-22 11:26:11 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in D:\Downloads\system-school-form\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 D:\Downloads\system-school-form\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'root', '', 'system-school-f...', 3306, '', 0)
+#1 D:\Downloads\system-school-form\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Downloads\system-school-form\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Downloads\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Downloads\system-school-form\system\Model.php(185): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Downloads\system-school-form\system\BaseModel.php(524): CodeIgniter\Model->doFind(false, NULL)
+#6 D:\Downloads\system-school-form\app\Controllers\Login.php(25): CodeIgniter\BaseModel->find()
+#7 D:\Downloads\system-school-form\system\CodeIgniter.php(927): App\Controllers\Login->verificar()
+#8 D:\Downloads\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#9 D:\Downloads\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Downloads\system-school-form\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\Downloads\system-school-form\system\Commands\Server\rewrite.php(46): require_once('D:\\Downloads\\sy...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in D:\Downloads\system-school-form\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 D:\Downloads\system-school-form\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Downloads\system-school-form\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Downloads\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\Downloads\system-school-form\system\Model.php(185): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Downloads\system-school-form\system\BaseModel.php(524): CodeIgniter\Model->doFind(false, NULL)
+#5 D:\Downloads\system-school-form\app\Controllers\Login.php(25): CodeIgniter\BaseModel->find()
+#6 D:\Downloads\system-school-form\system\CodeIgniter.php(927): App\Controllers\Login->verificar()
+#7 D:\Downloads\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 D:\Downloads\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Downloads\system-school-form\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 D:\Downloads\system-school-form\system\Commands\Server\rewrite.php(46): require_once('D:\\Downloads\\sy...')
+#11 {main}
+CRITICAL - 2023-12-22 11:26:11 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `usua_user` = :usua_user:
+AND `usua_pass` = :usua_pass:
+AND `usua_esta_ide` = :usua_esta_ide:', [...], false)
+ 3 SYSTEMPATH\Model.php(185): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(524): CodeIgniter\Model->doFind(false, null)
+ 5 APPPATH\Controllers\Login.php(25): CodeIgniter\BaseModel->find()
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Login->verificar()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2023-12-22 11:53:11 --> Attempt to read property "started" on string
+in APPPATH\Controllers\FormController.php on line 255.
+ 1 APPPATH\Controllers\FormController.php(255): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "started" on string', 'APPPATH\\Controllers\\FormController.php', 255)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->show_form('1390', '6')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2023-12-22 11:53:19 --> Attempt to read property "started" on string
+in APPPATH\Controllers\FormController.php on line 255.
+ 1 APPPATH\Controllers\FormController.php(255): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "started" on string', 'APPPATH\\Controllers\\FormController.php', 255)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->show_form('1390', '6')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2023-12-22 11:53:36 --> Attempt to read property "started" on string
+in APPPATH\Controllers\FormController.php on line 255.
+ 1 APPPATH\Controllers\FormController.php(255): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "started" on string', 'APPPATH\\Controllers\\FormController.php', 255)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->show_form('1390', '6')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2023-12-22 12:05:53 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Views\pages\form\AsignInstitution.php on line 19.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('pages/form/AsignInstitution', [], true)
+ 4 APPPATH\Controllers\FormController.php(220): view('pages/form/AsignInstitution', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->asign_institutions('4')
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2023-12-22 12:06:06 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Views\pages\form\AsignInstitution.php on line 19.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('pages/form/AsignInstitution', [], true)
+ 4 APPPATH\Controllers\FormController.php(220): view('pages/form/AsignInstitution', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->asign_institutions('5')
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2023-12-22 12:06:22 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Views\pages\form\AsignInstitution.php on line 19.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('pages/form/AsignInstitution', [], true)
+ 4 APPPATH\Controllers\FormController.php(220): view('pages/form/AsignInstitution', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->asign_institutions('3')
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2023-12-22 20:14:26 --> Undefined variable $aspect
+in APPPATH\Views\pages\ConfigItems.php on line 14.
+ 1 APPPATH\Views\pages\ConfigItems.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $aspect', 'APPPATH\\Views\\pages\\ConfigItems.php', 14)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\ConfigItems.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('pages/ConfigItems', [], true)
+ 5 APPPATH\Controllers\FormController.php(194): view('pages/ConfigItems', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->config_items('6')
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2023-12-22 21:00:41 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 867.
+ 1 SYSTEMPATH\BaseModel.php(867): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(693): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\FormController.php(559): CodeIgniter\Model->update('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->update_form_title_value()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')

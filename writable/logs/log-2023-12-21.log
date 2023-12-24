@@ -1,0 +1,67 @@
+CRITICAL - 2023-12-21 20:12:03 --> Attempt to read property "item_type_id" on array
+in APPPATH\Controllers\FormController.php on line 429.
+ 1 APPPATH\Controllers\FormController.php(429): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "item_type_id" on array', 'APPPATH\\Controllers\\FormController.php', 429)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->submit_form('1390', '6')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2023-12-21 20:30:27 --> syntax error, unexpected token "switch"
+in APPPATH\Controllers\FormController.php on line 443.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\FormController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\FormController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\FormController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\FormController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+ERROR - 2023-12-21 20:30:55 --> mysqli_sql_exception: Unknown column 'institucion_id' in 'where clause' in D:\Downloads\system-school-form\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\Downloads\system-school-form\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Downloads\system-school-form\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Downloads\system-school-form\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Downloads\system-school-form\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Downloads\system-school-form\system\Model.php(250): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Downloads\system-school-form\system\BaseModel.php(623): CodeIgniter\Model->doFirst()
+#6 D:\Downloads\system-school-form\app\Controllers\FormController.php(431): CodeIgniter\BaseModel->first()
+#7 D:\Downloads\system-school-form\system\CodeIgniter.php(927): App\Controllers\FormController->submit_form('1390', '6')
+#8 D:\Downloads\system-school-form\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+#9 D:\Downloads\system-school-form\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Downloads\system-school-form\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\Downloads\system-school-form\system\Commands\Server\rewrite.php(46): require_once('D:\\Downloads\\sy...')
+#12 {main}
+CRITICAL - 2023-12-21 20:30:55 --> Unknown column 'institucion_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `institucion_form`
+WHERE `institucion_id` = \'1390\'
+AND `form_id` = \'6\'
+AND `state_id` = 1
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `institucion_form`
+WHERE `institucion_id` = \'1390\'
+AND `form_id` = \'6\'
+AND `state_id` = 1
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `institucion_form`
+WHERE `institucion_id` = \'1390\'
+AND `form_id` = \'6\'
+AND `state_id` = 1
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `institucion_form`
+WHERE `institucion_id` = :institucion_id:
+AND `form_id` = :form_id:
+AND `state_id` = :state_id:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(623): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\FormController.php(431): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->submit_form('1390', '6')
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')

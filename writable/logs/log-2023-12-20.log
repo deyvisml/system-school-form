@@ -1,0 +1,8 @@
+CRITICAL - 2023-12-20 20:56:57 --> Attempt to read property "free" on array
+in APPPATH\Controllers\FormController.php on line 309.
+ 1 APPPATH\Controllers\FormController.php(309): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "free" on array', 'APPPATH\\Controllers\\FormController.php', 309)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->submit_form('1390', '6')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')

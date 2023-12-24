@@ -1,0 +1,8 @@
+CRITICAL - 2023-12-09 12:23:51 --> Undefined variable $xd
+in APPPATH\Controllers\FormController.php on line 196.
+ 1 APPPATH\Controllers\FormController.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $xd', 'APPPATH\\Controllers\\FormController.php', 196)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\FormController->asign_institutions('7')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')

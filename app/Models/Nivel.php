@@ -4,28 +4,29 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Form extends Model
+class Nivel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'forms';
-    protected $primaryKey       = 'id';
+    protected $table            = 'niveles';
+    protected $primaryKey       = 'nive_ide';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        "id",
-        "name",
-        "description",
-        "form_title",
-        "form_description",
-        "user_id",
-        "state_id",
+        "nive_ide",
+        "nive_nombre",
+        "nive_siglas",
+        "nive_orden",
+        "nive_min",
+        "nive_max",
+        "nive_esta_ide",
+        "nive_fechareg",
     ];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
